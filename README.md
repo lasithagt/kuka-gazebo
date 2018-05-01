@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## IIWA STACK
 ROS Indigo/Kinetic metapackage for the KUKA LBR IIWA R800/R820 (7/14 Kg).
 
@@ -59,3 +60,7 @@ Marco Esposito : marco.esposito@tum.de
 [6]: http://git.lcsr.jhu.edu/cgrauma1/kuka_iiwa_shared
 [7]: https://github.com/rtkg/lbr_iiwa
 [8]: https://github.com/SalvoVirga/iiwa_stack/wiki
+=======
+# kuka-iiwa
+This includes all the plugins required to run the KUKA as well the Gazebo. A fork from iiwa-stack. Customized and added some functions
+>>>>>>> 7d2cd32b8de7d69fbaca3b088b5dc2919a05b370
