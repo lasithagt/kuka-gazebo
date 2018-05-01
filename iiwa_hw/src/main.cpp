@@ -57,6 +57,7 @@ int main( int argc, char** argv ) {
   IIWA_HW iiwa_robot(iiwa_nh);
   
   // configuration routines
+  std::cerr << "Stopping spinner..." << std::endl;
   iiwa_robot.start();
   
   ros::Time last(ros::Time::now());

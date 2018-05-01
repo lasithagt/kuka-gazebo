@@ -31,8 +31,10 @@
 #include <iiwa_msgs/JointPositionVelocity.h>
 #include <iiwa_msgs/JointDamping.h>
 #include <std_msgs//Time.h>
+#include <std_msgs//Float64.h>
 #include <geometry_msgs/WrenchStamped.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <sensor_msgs/JointState.h>
 #include <smart_servo_service.h>
 #include <path_parameters_service.h>
 #include <time_to_destination_service.h>
@@ -44,7 +46,7 @@
 namespace iiwa_ros {
   
   extern ros::Time last_update_time;
-  
+
   template <typename ROSMSG>
   class iiwaHolder {
   public:
@@ -59,7 +61,6 @@ namespace iiwa_ros {
     
     bool get_value(ROSMSG& value) {
       bool was_new = false;
-      
       mutex.lock();
       value = data;
       was_new = is_new;
@@ -83,6 +84,7 @@ namespace iiwa_ros {
     std::mutex mutex;
   };
   
+
   template <typename ROSMSG>
   class iiwaStateHolder {
   public:
@@ -115,6 +117,7 @@ namespace iiwa_ros {
     void init(const std::string& topic) {
       ros::NodeHandle nh;
       publisher = nh.advertise<ROSMSG>(topic, 1);
+      // std::cout << "Init Publishing..." <<std::endl;
     }
     
     void set(const ROSMSG& value) {
@@ -128,151 +131,82 @@ namespace iiwa_ros {
     void publishIfNew() {
       static ROSMSG msg;
       if (publisher.getNumSubscribers() && holder.get_value(msg))
+        // std::cout << "Publishing..." <<std::endl;
         publisher.publish(msg);
     }
   private:
     ros::Publisher publisher;
     iiwaHolder<ROSMSG> holder;
   };
-  
+   
+
+
+
+  // Abstract class for iiwaROS, The messages for Gazebo and real time system are different.
   class iiwaRos {
   public:
     
-    /**
-     * @brief Constructor for class iiwaRos holding all the methods to command and get the state of the robot.
-     */
-    iiwaRos();
+
+    // iiwaRos();
     
-    /**
-     * @brief Initializes the necessary topics for state and command methods.
-     * 
-     * @return void
-     */
-    void init();
+ 
+    virtual void init(ros::NodeHandle& nh)=0;
     
-    /**
-     * @brief Returns true is a new Cartesian pose of the robot is available.
-     * 
-     * @param value the current Cartesian Pose of the robot.
-     * @return bool
-     */
-    bool getCartesianPose(geometry_msgs::PoseStamped& value);
+ 
+    virtual bool getCartesianPose(geometry_msgs::PoseStamped& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint position of the robot is available.
-     * 
-     * @param value the current joint position of the robot.
-     * @return bool
-     */
-    bool getJointPosition(iiwa_msgs::JointPosition& value);
+
+    virtual bool getJointPosition(iiwa_msgs::JointPosition& value) {return 0;}
+   
+    virtual bool getJointTorque(iiwa_msgs::JointTorque& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint torque of the robot is available.
-     * 
-     * @param value the current joint torque of the robot.
-     * @return bool
-     */
-    bool getJointTorque(iiwa_msgs::JointTorque& value);
+
+    virtual bool getJointStiffness(iiwa_msgs::JointStiffness& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint stiffness of the robot is available.
-     * 
-     * @param value the current joint stiffness of the robot.
-     * @return bool
-     */
-    bool getJointStiffness(iiwa_msgs::JointStiffness& value);
+   
+    virtual bool getCartesianWrench(geometry_msgs::WrenchStamped& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Cartesian wrench of the robot is available.
-     * 
-     * @param value the current cartesian wrench of the robot.
-     * @return bool
-     */
-    bool getCartesianWrench(geometry_msgs::WrenchStamped& value);
+
+    virtual bool getJointVelocity(iiwa_msgs::JointVelocity& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint velocity of the robot is available.
-     * 
-     * @param value the current joint velocity of the robot.
-     * @return bool
-     */
-    bool getJointVelocity(iiwa_msgs::JointVelocity& value);
+
+
+    virtual bool getJointCommVelocity(iiwa_msgs::JointVelocity& value) {return 0;}
+
+
+    virtual bool getJointPositionVelocity(iiwa_msgs::JointPositionVelocity& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint position velocity of the robot is available.
-     * 
-     * @param value the current joint position velocity of the robot.
-     * @return bool
-     */
-    bool getJointPositionVelocity(iiwa_msgs::JointPositionVelocity& value);
+
+    virtual bool getJointDamping(iiwa_msgs::JointDamping& value) {return 0;}
     
-    /**
-     * @brief Returns true is a new Joint damping of the robot is available.
-     * 
-     * @param value the current joint damping of the robot.
-     * @return bool
-     */
-    bool getJointDamping(iiwa_msgs::JointDamping& value);
-    
-    /**
-     * @brief Returns the object that allows to call the configureSmartServo service.
-     * 
-     * @return iiwa_ros::SmartServoService
-     */
+
     SmartServoService getSmartServoService() { return smart_servo_service_; }
     
-    /**
-     * @brief Returns the object that allows to call the timeToDestination service.
-     * 
-     * @return iiwa_ros::PathParametersService
-     */
+
     PathParametersService getPathParametersService() { return path_parameters_service_; }
     
-    /**
-     * @brief Returns the object that allows to call the setPathParameters service.
-     * 
-     * @return iiwa_ros::TimeToDestinationService
-     */
+
     TimeToDestinationService getTimeToDestinationService() { return time_to_destination_service_; };
     
-    /**
-     * @brief Set the cartesian pose of the robot.
-     * 
-     * @param position the cartesian pose to set the robot.
-     * @return void
-     */
-    void setCartesianPose(const geometry_msgs::PoseStamped& position);
+
+    virtual void setCartesianPose(const geometry_msgs::PoseStamped& position) {}
     
-    /**
-     * @brief Set the joint position of the robot.
-     * 
-     * @param position the joint position to set the robot.
-     * @return void
-     */
-    void setJointPosition(const iiwa_msgs::JointPosition& position);
+
+    virtual void setJointPosition(const iiwa_msgs::JointPosition& position) {};
     
-    /**
-     * @brief Set the joint velocity of the robot.
-     * 
-     * @param velocity the joint velocity to set the robot.
-     * @return void
-     */
-    void setJointVelocity(const iiwa_msgs::JointVelocity& velocity);
+
+    virtual void setJointVelocity(const iiwa_msgs::JointVelocity& velocity) {};
     
-    /**
-     * @brief Set the joint position velocity of the robot.
-     * 
-     * @param value the joint position velocity of the robot.
-     * @return void
-     */
-    void setJointPositionVelocity(const iiwa_msgs::JointPositionVelocity& value);
+
+    virtual void setJointPositionVelocity(const iiwa_msgs::JointPositionVelocity& value) {};
     
-    /**
-     * \brief Returns the current connection status of an IIWA robot.
-     */
-    bool getRobotIsConnected();
+ 
+    bool getRobotIsConnected() {
+      ros::Duration diff = (ros::Time::now() - last_update_time);
+      return (diff < ros::Duration(0.25));
+    }
     
-  private:
+  protected:
     iiwaStateHolder<geometry_msgs::PoseStamped> holder_state_pose_;
     iiwaStateHolder<iiwa_msgs::JointPosition> holder_state_joint_position_;
     iiwaStateHolder<iiwa_msgs::JointTorque> holder_state_joint_torque_;
@@ -280,6 +214,7 @@ namespace iiwa_ros {
     iiwaStateHolder<iiwa_msgs::JointDamping> holder_state_joint_damping_;
     iiwaStateHolder<iiwa_msgs::JointStiffness> holder_state_joint_stiffness_;
     iiwaStateHolder<iiwa_msgs::JointVelocity> holder_state_joint_velocity_;
+    iiwaStateHolder<iiwa_msgs::JointVelocity> holder_state_comm_joint_velocity_;
     iiwaStateHolder<iiwa_msgs::JointPositionVelocity> holder_state_joint_position_velocity_;
     iiwaStateHolder<std_msgs::Time> holder_state_destination_reached_;
     
@@ -292,5 +227,49 @@ namespace iiwa_ros {
     PathParametersService path_parameters_service_;
     TimeToDestinationService time_to_destination_service_;
   };
+
+  class iiwaRosReal: public iiwaRos {
+  public:
+
+    void init(ros::NodeHandle& nh);
+    bool getCartesianPose(geometry_msgs::PoseStamped& value);
+    bool getJointPosition(iiwa_msgs::JointPosition& value); 
+    bool getJointTorque(iiwa_msgs::JointTorque& value); 
+    bool getJointStiffness(iiwa_msgs::JointStiffness& value); 
+    bool getCartesianWrench(geometry_msgs::WrenchStamped& value);
+    bool getJointVelocity(iiwa_msgs::JointVelocity& value);
+    bool getJointPositionVelocity(iiwa_msgs::JointPositionVelocity& value);
+    bool getJointDamping(iiwa_msgs::JointDamping& value); 
+    bool getJointCommVelocity(iiwa_msgs::JointVelocity& value); 
+    void setCartesianPose(const geometry_msgs::PoseStamped& position);
+    void setJointPosition(const iiwa_msgs::JointPosition& position); 
+    void setJointVelocity(const iiwa_msgs::JointVelocity& velocity); 
+    void setJointPositionVelocity(const iiwa_msgs::JointPositionVelocity& value); 
+  };
+
+
+
+  class iiwaRosGazebo: public iiwaRos {
+
+  public:
+    void init(ros::NodeHandle& nh);
+    bool getJointPositionVelocity(iiwa_msgs::JointPositionVelocity& value);
+    void setJointPosition(const iiwa_msgs::JointPosition& position);
+    void setJointVelocity(const iiwa_msgs::JointVelocity& velocity);
+  private:
+    iiwaStateHolder<sensor_msgs::JointState> holder_state;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_1;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_2;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_3;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_4;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_5;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_6;
+    iiwaCommandHolder<std_msgs::Float64> holder_command_joint_7;
+  };
+
+
+
+
+  
   
 }

@@ -11,10 +11,10 @@
     <!-- |    controllers for the single joints, using the "trajectory" argument.            | -->
     <!-- ===================================================================================== -->
     
-    <arg name="hardware_interface" default="PositionJointInterface" />
+    <arg name="hardware_interface" default="VelocityJointInterface" />
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
-    <arg name="trajectory" default="true"/>
+    <arg name="trajectory" default="false"/>
     
     <!-- Loads the Gazebo world. -->
     <include file="$(find iiwa_gazebo)/launch/iiwa_world.launch">
@@ -47,7 +47,8 @@
                  $(arg hardware_interface)_J4_controller
                  $(arg hardware_interface)_J5_controller
                  $(arg hardware_interface)_J6_controller
-                 $(arg hardware_interface)_J7_controller"/>
+                 $(arg hardware_interface)_J7_controller
+                 "/>
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>

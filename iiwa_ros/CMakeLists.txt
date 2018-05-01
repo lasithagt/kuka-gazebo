@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   cmake_modules
   roscpp
 )
+find_package(orocos_kdl)
 
 catkin_package(
 	INCLUDE_DIRS include
@@ -32,3 +33,4 @@ target_link_libraries(${PROJECT_NAME}
 
 ## Add dependence to the iiwa_msg module for the library
 add_dependencies(${PROJECT_NAME} iiwa_msgs_generate_messages_cpp)
+

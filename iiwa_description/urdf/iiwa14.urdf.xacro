@@ -11,10 +11,64 @@
   <xacro:arg name="origin_rpy" default="0 0 0"/>
   
   <!-- Fix to world just for testing -->
-  <link name="world"/>
+  
+  <link name="world" />
+  
+  <joint
+    name="fixed"
+    type="fixed">
+    <parent
+      link="world" />
+    <child
+      link="frame" />
+  </joint>
+
+
+  <link
+    name="frame">
+    <inertial>
+      <origin
+        xyz="1.5 0.25 1.25"
+        rpy="0 0 0" />
+      <mass
+        value="2697" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  
   
   <!--iiwa-->
-  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
+  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="frame">
     <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
   </xacro:iiwa14>
   
