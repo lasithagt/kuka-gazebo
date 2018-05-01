@@ -22,6 +22,7 @@
       <xacro:insert_block name="origin"/>
       <parent link="${parent}"/>
       <child link="${robot_name}_link_0"/>
+      <axis xyz="0 0 1"/>
     </joint>
 
     

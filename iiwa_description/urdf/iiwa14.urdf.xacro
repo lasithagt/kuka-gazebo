@@ -21,6 +21,7 @@
       link="world" />
     <child
       link="frame" />
+    <axis xyz="0 0 1"/>
   </joint>
 
 
@@ -68,8 +69,9 @@
   
   
   <!--iiwa-->
-  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="frame">
+  <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
     <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
   </xacro:iiwa14>
+
   
 </robot>
