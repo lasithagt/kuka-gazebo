@@ -188,6 +188,7 @@
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}"/>
+      <pose xyz="0 0 0" rpy="0 0 1" /pose>
     </joint>
     
     <link name="${robot_name}_link_4">
