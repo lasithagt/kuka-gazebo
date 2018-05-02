@@ -1,7 +1,7 @@
 
 ### Steps to run the code
 - _Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
--- Orocos-kdl is not needed for if a controller is not used  (e.g. kuka-ddp)
+-- _Orocos-kdl is not needed for if a controller is not used  (e.g. kuka-ddp)
 - _Run gazebo launch file by roslaunch iiwa-gazebo iiwa-gazbo.launch
 
 ### Gazebo functionality
