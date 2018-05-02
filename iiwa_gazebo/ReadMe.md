@@ -5,7 +5,7 @@
 - _Run gazebo launch file by roslaunch iiwa-gazebo iiwa-gazbo.launch
 
 ### Gazebo functionality
-- _Currently gazebo is in velocity mode (hybrid mode)
+- _Currently gazebo is in velocity mode (hybrid mode is not available)
 - _Example code is provided in 'kuka-iiwa/iiwa_stack_examples/iiwa_tool_examples/src/CommandRobot.cpp
 
 
