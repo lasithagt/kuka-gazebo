@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## IIWA STACK
 ROS Indigo/Kinetic metapackage for the KUKA LBR IIWA R800/R820 (7/14 Kg).
 
@@ -48,19 +47,13 @@ This repository takes inspiration from the work of :
 
 Most of the original files were completely refactored though.
 
-### Contacts
-Salvatore Virga : salvo.virga@tum.de     
-Marco Esposito : marco.esposito@tum.de
 
-[1]: https://github.com/CentroEPiaggio/kuka-lwr
-[2]: https://bitbucket.org/khansari/iiwa.git
-[3]: https://bitbucket.org/khansari/iiwa/src/c4578460d79d5d24f58bf94bd97fb6cb0b6f280f/msg/IIWAMsg.msg
-[4]: https://bitbucket.org/khansari/iiwa/wiki/Home
-[5]: https://bitbucket.org/khansari/iiwa/src/c4578460d79d5d24f58bf94bd97fb6cb0b6f280f/JavaNode/?at=master
-[6]: http://git.lcsr.jhu.edu/cgrauma1/kuka_iiwa_shared
-[7]: https://github.com/rtkg/lbr_iiwa
-[8]: https://github.com/SalvoVirga/iiwa_stack/wiki
 =======
 # kuka-iiwa
 This includes all the plugins required to run the KUKA as well the Gazebo. A fork from iiwa-stack. Customized and added some functions
+
+# Steps to run the code
+-Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
+-Run gazebo launch file by roslaunch iiwa-gazebo 
+
 >>>>>>> 7d2cd32b8de7d69fbaca3b088b5dc2919a05b370
