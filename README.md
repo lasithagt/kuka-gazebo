@@ -52,8 +52,14 @@ Most of the original files were completely refactored though.
 # kuka-iiwa
 This includes all the plugins required to run the KUKA as well the Gazebo. A fork from iiwa-stack. Customized and added some functions
 
-# Steps to run the code
--Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
--Run gazebo launch file by roslaunch iiwa-gazebo 
+## Steps to run the code
+- _Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
+- _Run gazebo launch file by roslaunch iiwa-gazebo iiwa-gazbo.launch
+
+## Gazebo functionality
+- _Currently gazebo is in velocity mode
+- _Example code is provided in 
+
+
 
 >>>>>>> 7d2cd32b8de7d69fbaca3b088b5dc2919a05b370
