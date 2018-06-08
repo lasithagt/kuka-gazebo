@@ -39,6 +39,7 @@
 #include <path_parameters_service.h>
 #include <time_to_destination_service.h>
 #include <ros/ros.h>
+#include <vector>
 
 #include <string>
 #include <mutex>
@@ -256,6 +257,33 @@ namespace iiwa_ros {
     bool getJointPositionVelocity(iiwa_msgs::JointPositionVelocity& value);
     void setJointPosition(const iiwa_msgs::JointPosition& position);
     void setJointVelocity(const iiwa_msgs::JointVelocity& velocity);
+
+    ros::NodeHandle initPy(double rate) {
+        int argc = 1;
+        char** argv = new char *[1];
+        ros::init(argc, argv, "CommandRobot");
+        ros::NodeHandle nh("~");
+        bool isGazebo = true;
+        double ros_rate;
+        nh.getParam("isGazebo", isGazebo);
+        nh.param("ros_rate", ros_rate, rate);
+        return nh;
+    }
+
+    void setJointVelocityPy(std::vector<double> velocity=(std::vector<double>){0, 0, 0, 0, 0, 0, 0}) {
+        iiwa_msgs::JointVelocity command_joint_velocity;
+
+        command_joint_velocity.velocity.a1 = velocity[0];
+        command_joint_velocity.velocity.a2 = velocity[1];
+        command_joint_velocity.velocity.a3 = velocity[2];
+        command_joint_velocity.velocity.a4 = velocity[3];
+        command_joint_velocity.velocity.a5 = velocity[4];
+        command_joint_velocity.velocity.a6 = velocity[5];
+        command_joint_velocity.velocity.a7 = velocity[6];
+
+        setJointVelocity(command_joint_velocity);
+    }
+
   private:
     iiwaStateHolder<sensor_msgs::JointState> holder_state;
     iiwaCommandHolder<std_msgs::Float64> holder_command_joint_1;
