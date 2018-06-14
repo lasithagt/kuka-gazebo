@@ -54,12 +54,14 @@ This includes all the plugins required to run the KUKA as well the Gazebo. A for
 
 
 ### Steps to run the code
-- _Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
-- _Run gazebo launch file by roslaunch iiwa-gazebo iiwa-gazbo.launch
+- Build the package (iiwa-stack) using catkin build (either install orocos-kdl dependancy using 'sudo apt-get install orocos-kdl' or build from source)
+- Launch script is located at kuka-iiwa/iiwa-gazebo/launch/launch_script.sh
+- Run launch scipt by bash ./launch_script.sh
+- Press a key to load (on the terminal) the controllers when Gazebo environment is loaded.
 
 ### Gazebo functionality
-- _Currently gazebo is in velocity mode (hybrid mode)
-- _Example code is provided in 'kuka-iiwa/iiwa_stack_examples/iiwa_tool_examples/src/CommandRobot.cpp
+- Currently gazebo is in velocity mode (hybrid mode)
+- Example code is provided in 'kuka-iiwa/iiwa_stack_examples/iiwa_tool_examples/src/CommandRobot.cpp
 
 
->>>>>>> 7d2cd32b8de7d69fbaca3b088b5dc2919a05b370
+
