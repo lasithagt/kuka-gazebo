@@ -1,0 +1,19 @@
+Claw1
+x:0mm
+y:-19.79mm
+z:17.5mm
+
+Claw 2
+x:0mm
+y:19.79mm
+z:17.5mm
+
+Claw 3
+x:-19.79mm
+y:0mm
+z:17.5mm
+
+Claw 4
+x:19.79mm
+y:0mm
+z:17.5mm

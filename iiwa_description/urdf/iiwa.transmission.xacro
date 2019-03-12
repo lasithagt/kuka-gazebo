@@ -84,5 +84,93 @@
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
+    
+    <!--Added for EOAT-->
+<!--
+  <transmission name="eoat_tran1">
+    <robotNamespace>/${robot_name}</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rotating_base_joint">
+      <hardwareInterface>${hardware_interface}</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>${hardware_interface}</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="eoat_tran2">
+    <robotNamespace>/${robot_name}</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rotating_arm_joint">
+      <hardwareInterface>${hardware_interface}</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>${hardware_interface}</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+-->
+
+<transmission name="claw_1_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_1_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_1_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="claw_2_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_2_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_2_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="claw_3_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_3_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_3_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<transmission name="claw_4_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_4_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_4_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+<transmission name="pulsating_surface_tran_1">
+      <robotNamespace>/pulsating_surface</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="prismatic_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="pulsating_surface_motor_1">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
   </xacro:macro>
 </robot>

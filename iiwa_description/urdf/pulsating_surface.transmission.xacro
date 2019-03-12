@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:macro name="pulsating_surface_transmission" params = "hardware_interface">
+<transmission name="pulsating_surface_tran_1">
+      <robotNamespace>/pulsating_surface</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="prismatic_joint">
+	<hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="pulsating_surface_motor_1">
+	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+</xacro:macro>
+</robot>

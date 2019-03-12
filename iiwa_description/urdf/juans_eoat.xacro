@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="juans_eoat" params="robot_name">
+  <link
+    name="rotating_base_link">
+    <inertial>
+      <origin
+        xyz="8.3267E-17 -0.014002 0.10295"
+        rpy="0 0 0" />
+      <mass
+        value="1.0378" />
+      <inertia
+        ixx="0.14873786"
+        ixy="0"
+        ixz="0"
+        iyy="0.14771362"
+        iyz="-0.02025771"
+        izz="0.05414075" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/rotating_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/rotating_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotating_base_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.045"
+      rpy="-6.123E-17 1.7312E-32 -1.06E-48" />
+    <parent
+      link="${robot_name}_link_7" />
+    <child
+      link="rotating_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="2000"
+      velocity="13" />
+    <dynamics damping="0.5"/>
+  </joint>
+  <link
+    name="rotating_arm_link">
+    <inertial>
+      <origin
+        xyz="-1.2411E-07 -0.055 0.29867"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.45120602"
+        ixy="-2.2E-07"
+        ixz="-3E-08"
+        iyy="0.44009543"
+        iyz="-0.06082724"
+        izz="0.01492566" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/rotating_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/rotating_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotating_arm_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0315 0.054"
+      rpy="2.4652E-32 1.4 5.8318E-50" />
+    <parent
+      link="rotating_base_link" />
+    <child
+      link="rotating_arm_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="2000"
+      velocity="13" />
+    <dynamics damping="0.5"/>
+  </joint>
+
+  </xacro:macro>
+</robot>

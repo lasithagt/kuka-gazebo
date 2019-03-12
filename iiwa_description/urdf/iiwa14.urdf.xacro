@@ -47,7 +47,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/visual/base_link.STL" />
+          filename="package://iiwa_description/meshes/iiwa14/visual/base_link.STL"/>
       </geometry>
       <material
         name="">
@@ -65,13 +65,9 @@
       </geometry>
     </collision>
   </link>
-
-  
-  
   <!--iiwa-->
   <xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
     <origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
   </xacro:iiwa14>
 
-  
 </robot>

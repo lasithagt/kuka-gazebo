@@ -44,6 +44,31 @@
     joint: iiwa_joint_7
     pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
 
+  EffortJointInterface_J8_controller:
+    type: effort_controllers/JointEffortController
+    joint: claw_1_joint
+    pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    
+  EffortJointInterface_J9_controller:
+    type: effort_controllers/JointEffortController
+    joint: claw_2_joint
+    pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J10_controller:
+    type: effort_controllers/JointEffortController
+    joint: claw_3_joint
+    pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J11_controller:
+    type: effort_controllers/JointEffortController
+    joint: claw_4_joint
+    pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}  
+
+  EffortJointInterface_PS_controller:
+    type: effort_controllers/JointPositionController
+    joint: prismatic_joint
+    pid: {p: 800.0, i: 100, d: 80.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
   # Forward Position Controllers ---------------------------------------
   PositionJointInterface_J1_controller:
     type: position_controllers/JointPositionController
@@ -72,6 +97,26 @@
   PositionJointInterface_J7_controller:
     type: position_controllers/JointPositionController
     joint: iiwa_joint_7
+
+  PositionJointInterface_J8_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_1_joint
+    
+  PositionJointInterface_J9_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_2_joint
+
+  PositionJointInterface_J10_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_3_joint  
+
+  PositionJointInterface_J11_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_4_joint
+
+  PositionJointInterface_PS_controller:
+    type: position_controllers/JointPositionController
+    joint: prismatic_joint
     
   # Forward Velocity Controllers ---------------------------------------
   VelocityJointInterface_J1_controller:
@@ -101,6 +146,22 @@
   VelocityJointInterface_J7_controller:
     type: velocity_controllers/JointVelocityController
     joint: iiwa_joint_7
+
+  VelocityJointInterface_J8_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_1_joint
+
+  VelocityJointInterface_J9_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_2_joint
+
+  VelocityJointInterface_J10_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_3_joint
+
+  VelocityJointInterface_J11_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_4_joint
     
     
   # Trajectory Controllers ---------------------------------------

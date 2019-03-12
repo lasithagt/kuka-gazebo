@@ -105,7 +105,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/base_link.STL</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -124,7 +124,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/base_link.STL</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/base_link.STL</uri>
             </mesh>
           </geometry>
         </visual>
@@ -169,7 +169,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_0.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_0.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -191,7 +191,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_0.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_0.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -242,7 +242,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_1.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_1.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -264,7 +264,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_1.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_1.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -317,7 +317,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_2.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_2.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -339,7 +339,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_2.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_2.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -392,7 +392,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_3.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_3.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -414,7 +414,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_3.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_3.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -467,7 +467,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_4.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_4.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -489,7 +489,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_4.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_4.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -542,7 +542,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_5.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_5.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -564,7 +564,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_5.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_5.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -617,7 +617,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_6.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_6.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -639,7 +639,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_6.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_6.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -692,7 +692,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/link_7.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_7.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -714,7 +714,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/flange.STL</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/flange.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -736,7 +736,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/visual/link_7.stl</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/link_7.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -751,7 +751,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/lasitha/catkin_ws/src/iiwa_stack/iiwa_description/meshes/iiwa14/collision/flange.STL</uri>
+              <uri>/home/juan/iiwa/iiwa_description/meshes/flange.STL</uri>
             </mesh>
           </geometry>
         </visual>

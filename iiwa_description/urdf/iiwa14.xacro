@@ -7,11 +7,15 @@
   <xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
   <!-- Include Utilities -->
   <xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
-  
+  <!-- Include EOAT -->
+  <xacro:include filename="$(find iiwa_description)/urdf/juans_eoat.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.urdf.xacro" />
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
   <xacro:property name="safety_controller_k_vel" value="2" /> 
-  <xacro:property name="joint_damping" value="0.5" />
+  <xacro:property name="joint_damping" value="0.1" />
+  <xacro:property name="joint_friction" value="0.1"/>
   <xacro:property name="max_effort" value="300"/>
   <xacro:property name="max_velocity" value="10"/>
   
@@ -70,7 +74,7 @@
                          soft_upper_limit="${168 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_1">
@@ -109,7 +113,7 @@
                          soft_upper_limit="${118 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_2">
@@ -148,7 +152,7 @@
                          soft_upper_limit="${168 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_3">
@@ -187,7 +191,7 @@
                          soft_upper_limit="${118 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_4">
@@ -226,7 +230,7 @@
                          soft_upper_limit="${168 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_5">
@@ -265,7 +269,7 @@
                          soft_upper_limit="${118 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_6">
@@ -304,7 +308,7 @@
                          soft_upper_limit="${173 * PI / 180}"
                          k_position="${safety_controller_k_pos}"
                          k_velocity="${safety_controller_k_vel}"/> 
-      <dynamics damping="${joint_damping}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
     <link name="${robot_name}_link_7">
@@ -330,16 +334,16 @@
         <material name="Grey"/>
       </collision>
     </link>
-    
+
+    <!-- Commented force sensor EOAT
     <joint name="${robot_name}_joint_ee" type="fixed">
       <parent link="${robot_name}_link_7"/>
       <child link="${robot_name}_link_ee"/>
       <origin xyz="0 0 0.0525" rpy="1.57 0 0"/>
     </joint>
     
-    <!--link name="${robot_name}_link_ee">
-    </link-->
-
+    <link name="${robot_name}_link_ee">
+    </link>
   <link
     name="${robot_name}_link_ee">
     <inertial>
@@ -380,10 +384,16 @@
       </geometry>
     </collision>
   </link>
+-->
     
     <!--Extensions -->
-    <xacro:iiwa_gazebo robot_name="${robot_name}" />
+    <!--<xacro:juans_eoat robot_name="${robot_name}"/>--> <!--Comented out EOAT-->
+    <xacro:gripper_eoat robot_name="${robot_name}"/>
+    <xacro:pulsating_surface />
+    <xacro:iiwa_gazebo robot_name="${robot_name}"/>
     <xacro:iiwa_transmission hardware_interface="${hardware_interface}"/>
+
+    
     
   </xacro:macro>
   
