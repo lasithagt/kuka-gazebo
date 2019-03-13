@@ -3,8 +3,8 @@
   <xacro:macro name="gripper_eoat" params="robot_name">
   <xacro:property name="PIhalf" value="1.570796" />
   <xacro:property name="PI" value="3.141592" />
-  <xacro:property name="joint_friction" value="0.1" />
-  <xacro:property name="joint_damping" value="0.1" />
+  <xacro:property name="joint_friction" value="0.0001" />
+  <xacro:property name="joint_damping" value="0.0001" />
   <link
     name="gripper_base_link">
     <inertial>
@@ -47,7 +47,7 @@
   </link>
   <joint
     name="gripper_base_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.045"
       rpy="0 0 0" />
@@ -58,6 +58,8 @@
     <axis
       xyz="0 0 1" />
     <limit
+      lower="0"
+      upper="0"
       effort="2000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
