@@ -21,5 +21,9 @@
           respawn="false" output="screen">
         <remap from="joint_states" to="/$(arg robot_name)/joint_states" />
     </node>
+
+    <include file="$(find iiwa_ros)/launch/command_iiwa.launch">
+    </include>
+
     
 </launch>

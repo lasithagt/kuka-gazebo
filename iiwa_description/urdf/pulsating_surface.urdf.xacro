@@ -42,7 +42,7 @@
     <joint name="prismatic_joint" type="prismatic">
       <parent link="post"/>
       <child link="surface"/>
-      <origin xyz="0 0 0.5" rpy="0 0 1.5707"/>
+      <origin xyz="0 0 0.3" rpy="0 0 1.5707"/>
       <axis xyz="0 0 1"/>
       <limit lower="-0.1" upper="0.3"
              effort="10000" velocity="10000" />

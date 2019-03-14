@@ -161,7 +161,7 @@
     </transmission>
 
 <transmission name="pulsating_surface_tran_1">
-      <robotNamespace>/pulsating_surface</robotNamespace>
+      <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="prismatic_joint">
   <hardwareInterface>${hardware_interface}</hardwareInterface>

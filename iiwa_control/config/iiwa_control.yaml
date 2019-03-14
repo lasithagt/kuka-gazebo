@@ -67,7 +67,7 @@
   EffortJointInterface_PS_controller:
     type: effort_controllers/JointPositionController
     joint: prismatic_joint
-    pid: {p: 800.0, i: 1000, d: 100.0, i_clamp_min: -10000, i_clamp_max: 10000}
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
 
   # Forward Position Controllers ---------------------------------------
   PositionJointInterface_J1_controller:
