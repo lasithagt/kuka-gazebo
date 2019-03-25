@@ -63,5 +63,20 @@ This includes all the plugins required to run the KUKA as well the Gazebo. A for
 - Currently gazebo is in velocity mode (hybrid mode)
 - Example code is provided in 'kuka-iiwa/iiwa_stack_examples/iiwa_tool_examples/src/CommandRobot.cpp
 
-
+### Steps to run iiwa_14 simulation and run control script
+  - roslaunch iiwa_gazebo iiwa_gazebo.launch ## This launches the robot in gazebo via an sdf, loads ros_control
+  - rosrun iiwa_ros closeGripper.py
+    -This runs the pyton script which inputs commands. For PID tuning, and observing responses or sensor data, run rqt_gui        and rqt_reconfigure
+    -Possible commands
+      -Engage gripper (effort control)
+        -After command, the program asks for a torque input, the inertias of the claws are very small so a value of 0.01 Nm            should be appropriate
+      -Disengage gripper
+      -Oscillate surface (position control)
+        -specifiy amplitude offset and duration as numbers separated by spaces. Default: 0.5 0 5
+      -Step response surface (position control)
+        -Specify the set point in meters as a single float
+        
+      
+  
+  
 
