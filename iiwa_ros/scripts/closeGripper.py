@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import rospy
 import math
+import numpy
 from std_msgs.msg import Float64
 
 def closeGripper():
@@ -23,19 +24,19 @@ def closeGripper():
 		elif (command == 'Oscillate surface'):
 			userinput = raw_input('Specify amplitude, offset and duration in s\n')
 			userinput = userinput.split()
-			time = rospy.get_rostime()
-			startTime = time.nsecs
-			currentTime = startTime
-			while((currentTime-startTime)*0.000000001<float(userinput[2])):
-				currentTime = rospy.get_rostime().nsecs*0.000000001
-				pos = float(userinput[0])+float(userinput[1])*math.sin(0.000000001*(currentTime-startTime))
+			time = numpy.linspace(0,float(userinput[2]),10*float(userinput[2]))
+			rate = rospy.Rate(10)
+			for t in time:
+				pos = float(userinput[1])+float(userinput[0])*math.sin(math.pi*t)
 				message.data=pos
 				surfacePublisher.publish(message)
-				rospy.Rate(10)
+				rate.sleep()
 		elif (command == 'Step response surface'):
 			position = raw_input('Input step response set point\n')
 			message.data = float(position)
 			surfacePublisher.publish(message)
+		else:
+			print("Command not recognized")
 
 
 if __name__ == '__main__':
