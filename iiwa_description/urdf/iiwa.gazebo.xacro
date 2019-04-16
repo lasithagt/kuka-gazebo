@@ -11,7 +11,8 @@
         <robotNamespace>/${robot_name}</robotNamespace>
       </plugin>
     </gazebo>
-<!--
+
+<!--Force sensors
     <gazebo>
       <plugin name='gazebo_ros_ft_sensor' filename='libgazebo_ros_ft_sensor.so'>
           <robotNamespace>/${robot_name}</robotNamespace>

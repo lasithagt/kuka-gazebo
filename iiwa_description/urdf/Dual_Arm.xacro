@@ -58,8 +58,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-3.14"
+      upper="3.14"
       effort="2000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -115,10 +115,10 @@
     <child
       link="Link1" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-0.5"
+      upper="0.5"
       effort="2000"
       velocity="13" />
   </joint>
@@ -174,10 +174,10 @@
     <child
       link="Link2" />
     <axis
-      xyz="-0.494322793221048 -0.869278422659933 0" />
+      xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-0.5"
+      upper="0.5"
       effort="2000"
       velocity="13" />
   </joint>
@@ -232,13 +232,14 @@
     <child
       link="Link3" />
     <axis
-      xyz="-0.869278422659933 0 0.494322793221049" />
+      xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-0.5"
+      upper="0.5"
       effort="2000"
       velocity="13" />
   </joint>
+  
   <link
     name="Link4">
     <inertial>
@@ -246,14 +247,14 @@
         xyz="-0.00106966507570738 -0.0713978397746767 -0.00106966507570611"
         rpy="0 0 0" />
       <mass
-        value="0.0456606488806743" />
+        value="0.117746913814738" />
       <inertia
-        ixx="4.32770392148837E-05"
-        ixy="-6.50658263909868E-07"
-        ixz="-9.78467852722041E-09"
-        iyy="1.95693570544345E-08"
-        iyz="-6.5065826390888E-07"
-        izz="4.32770392148837E-05" />
+        ixx="9.95073774261661E-05"
+        ixy="-2.667473422779E-07"
+        ixz="-3.12070252262036E-06"
+        iyy="0.000106288781760734"
+        iyz="-2.88857039626312E-06"
+        izz="6.98820523527226E-06" />
     </inertial>
     <visual>
       <origin
@@ -290,12 +291,13 @@
     <child
       link="Link4" />
     <axis
-      xyz="0.362830675905036 -0.335721498447973 -0.869278422659934" />
+      xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-0.5"
+      upper="0.5"
       effort="2000"
       velocity="13" />
   </joint>
+
   </xacro:macro>
 </robot>
