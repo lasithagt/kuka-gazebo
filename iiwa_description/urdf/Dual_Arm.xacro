@@ -122,6 +122,7 @@
       effort="2000"
       velocity="13" />
   </joint>
+
   <link
     name="Link2">
     <inertial>

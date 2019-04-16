@@ -45,23 +45,23 @@
     pid: {p: 10.0, i: 0.1, d: 1.0, i_clamp_min: -10000, i_clamp_max: 10000}
 
   EffortJointInterface_J8_controller:
-    type: effort_controllers/JointEffortController
-    joint: claw_1_joint
+    type: effort_controllers/JointPositionController
+    joint: J_1
     pid: {p: 1, i: 0, d: 0.1}  
     
   EffortJointInterface_J9_controller:
-    type: effort_controllers/JointEffortController
-    joint: claw_2_joint
+    type: effort_controllers/JointPositionController
+    joint: J_2
     pid: {p: 1, i: 0, d: 0.1}
 
   EffortJointInterface_J10_controller:
-    type: effort_controllers/JointEffortController
-    joint: claw_3_joint
+    type: effort_controllers/JointPositionController
+    joint: J_3
     pid: {p: 1, i: 0, d: 0.1}  
 
   EffortJointInterface_J11_controller:
-    type: effort_controllers/JointEffortController
-    joint: claw_4_joint
+    type: effort_controllers/JointPositionController
+    joint: J_4s
     pid: {p: 1, i: 0, d: 0.1}  
 
   EffortJointInterface_PS_controller:
@@ -100,19 +100,19 @@
 
   PositionJointInterface_J8_controller:
     type: position_controllers/JointPositionController
-    joint: claw_1_joint
+    joint: J_1
     
   PositionJointInterface_J9_controller:
     type: position_controllers/JointPositionController
-    joint: claw_2_joint
+    joint: J_2
 
   PositionJointInterface_J10_controller:
     type: position_controllers/JointPositionController
-    joint: claw_3_joint  
+    joint: J_3  
 
   PositionJointInterface_J11_controller:
     type: position_controllers/JointPositionController
-    joint: claw_4_joint
+    joint: J_4
 
   PositionJointInterface_PS_controller:
     type: position_controllers/JointPositionController
