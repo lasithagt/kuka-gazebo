@@ -49,10 +49,6 @@
                  $(arg hardware_interface)_J5_controller
                  $(arg hardware_interface)_J6_controller
                  $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_J8_controller
-                 $(arg hardware_interface)_J9_controller
-                 $(arg hardware_interface)_J10_controller
-                 $(arg hardware_interface)_J11_controller
                  $(arg hardware_interface)_PS_controller
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />

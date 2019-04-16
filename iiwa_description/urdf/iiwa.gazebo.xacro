@@ -11,7 +11,7 @@
         <robotNamespace>/${robot_name}</robotNamespace>
       </plugin>
     </gazebo>
-
+<!--
     <gazebo>
       <plugin name='gazebo_ros_ft_sensor' filename='libgazebo_ros_ft_sensor.so'>
           <robotNamespace>/${robot_name}</robotNamespace>
@@ -29,10 +29,10 @@
           <updateRate>10</updateRate>
       </plugin>
   </gazebo>
-
+-->
  
     <gazebo>
-      <static>0</static>
+      <static>1</static>
     </gazebo>
   
 
@@ -128,7 +128,7 @@
       <mu2>0.2</mu2>
       <selfCollide>1</selfCollide>
     </gazebo>
--->
+--><!--
     <gazebo reference="gripper_base_link">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
@@ -171,7 +171,7 @@
       <gravity>1</gravity>
       <selfCollide>1</selfCollide>
     </gazebo>
-
+-->
     <gazebo reference="post">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>

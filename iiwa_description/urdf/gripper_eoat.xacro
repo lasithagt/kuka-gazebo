@@ -313,6 +313,5 @@
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
--->
   </xacro:macro>
 </robot>

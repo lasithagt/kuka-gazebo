@@ -1,0 +1,470 @@
+<robot
+  name="Dual_Arm">
+  <link
+    name="Dual_Arm">
+    <inertial>
+      <origin
+        xyz="0.0657516936845972 -2.77555756156289E-17 -0.0854799809858157"
+        rpy="0 0 0" />
+      <mass
+        value="81.613834759363" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Dual_Arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Dual_Arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Manipulator_1">
+    <inertial>
+      <origin
+        xyz="-0.000324303946570945 0.0440543584646531 -0.297297621114595"
+        rpy="0 0 0" />
+      <mass
+        value="0.323170961015294" />
+      <inertia
+        ixx="0.000102130614833599"
+        ixy="1.80904701063587E-08"
+        ixz="-1.64814238002965E-06"
+        iyy="9.92836287035489E-05"
+        iyz="1.07538429652755E-05"
+        izz="2.93161423370225E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Manipulator_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Manipulator_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M1_J1"
+    type="revolute">
+    <origin
+      xyz="0.067827 0.13023 -0.10819"
+      rpy="-1.7104 0.7854 -2.5257E-16" />
+    <parent
+      link="Dual_Arm" />
+    <child
+      link="Manipulator_1" />
+    <axis
+      xyz="0 -0.27564 0.96126" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="M1_Link_2">
+    <inertial>
+      <origin
+        xyz="-0.0762644056067338 0.0356577707838946 -0.000108892722940512"
+        rpy="0 0 0" />
+      <mass
+        value="0.161073771057089" />
+      <inertia
+        ixx="7.30585902223464E-05"
+        ixy="0.0001570289775977"
+        ixz="1.34929299057704E-06"
+        iyy="0.000345611937279943"
+        iyz="-6.30699014672707E-07"
+        izz="0.000417367290207478" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M1_J2"
+    type="continuous">
+    <origin
+      xyz="0 0.0568335634717834 -0.32971581674233"
+      rpy="-1.5984314331055 0.277917479794255 -1.67121116021329" />
+    <parent
+      link="Manipulator_1" />
+    <child
+      link="M1_Link_2" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="M1_Link_3">
+    <inertial>
+      <origin
+        xyz="-0.00289722670506423 3.29816754462975E-09 0.0359446286534675"
+        rpy="0 0 0" />
+      <mass
+        value="0.117746897272173" />
+      <inertia
+        ixx="0.000102184987739131"
+        ixy="2.75333324587695E-12"
+        ixz="2.5060116265214E-06"
+        iyy="0.000109069787944094"
+        iyz="-6.97608694274425E-12"
+        izz="6.88480020496549E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M1_J3"
+    type="revolute">
+    <origin
+      xyz="-0.156816991871383 0.0708638009523231 0"
+      rpy="2.64368854888088 -1.57079630098533 -3.06048227145717" />
+    <parent
+      link="M1_Link_2" />
+    <child
+      link="M1_Link_3" />
+    <axis
+      xyz="0 -0.911276356866573 -0.411795339235386" />
+  </joint>
+  <link
+    name="M1_Link_4">
+    <inertial>
+      <origin
+        xyz="-0.0392535264047233 0.059639015663271 -4.16333634234434E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0456606488806744" />
+      <inertia
+        ixx="3.0189097389733E-05"
+        ixy="1.98700216350561E-05"
+        ixz="-2.24596079920398E-20"
+        iyy="1.30781571466218E-05"
+        iyz="3.44636530414093E-20"
+        izz="4.32672545363547E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M1_Link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M1_J4"
+    type="continuous">
+    <origin
+      xyz="-0.02667 0 0.0675639999999995"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="M1_Link_3" />
+    <child
+      link="M1_Link_4" />
+    <axis
+      xyz="0.411795339235385 0.911276356866573 0" />
+  </joint>
+  <link
+    name="Manipulator_2">
+    <inertial>
+      <origin
+        xyz="-0.000324303946570945 0.0440543584646531 -0.297297621114595"
+        rpy="0 0 0" />
+      <mass
+        value="0.323170961015294" />
+      <inertia
+        ixx="0.000102130614833599"
+        ixy="1.80904701063623E-08"
+        ixz="-1.64814238002964E-06"
+        iyy="9.92836287035489E-05"
+        iyz="1.07538429652755E-05"
+        izz="2.93161423370224E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Manipulator_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/Manipulator_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M2_J1"
+    type="continuous">
+    <origin
+      xyz="0.0678271029268717 0.130233745022306 -0.108185917046084"
+      rpy="-1.71042266695444 0.785398163397447 -2.52572358784293E-16" />
+    <parent
+      link="Dual_Arm" />
+    <child
+      link="Manipulator_2" />
+    <axis
+      xyz="0 -0.275637355817 0.961261695938319" />
+  </joint>
+  <link
+    name="M2_Link_2">
+    <inertial>
+      <origin
+        xyz="-0.0841192959557392 0.00341746083775507 -0.000108954751720722"
+        rpy="0 0 0" />
+      <mass
+        value="0.161073699584165" />
+      <inertia
+        ixx="1.82471592757996E-06"
+        ixy="1.29925862375105E-05"
+        ixz="1.48811402368844E-06"
+        iyy="0.000416845785465423"
+        iyz="-6.02972178664397E-08"
+        izz="0.000417367268447989" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M2_J2"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0746759999999996"
+      rpy="1.5707963267949 -1.11022302462516E-16 -1.57871259579257" />
+    <parent
+      link="Manipulator_2" />
+    <child
+      link="M2_Link_2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="M2_Link_3">
+    <inertial>
+      <origin
+        xyz="-0.00289722560184351 3.45689782355052E-09 0.0359446258216229"
+        rpy="0 0 0" />
+      <mass
+        value="0.117746889945251" />
+      <inertia
+        ixx="0.000102184978123926"
+        ixy="2.8858416648063E-12"
+        ixz="2.50600786215378E-06"
+        iyy="0.00010906977685523"
+        iyz="-7.31182292268169E-12"
+        izz="6.88479873130735E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M2_J3"
+    type="revolute">
+    <origin
+      xyz="-0.172019119821144 0.00476126463861543 0"
+      rpy="3.11392102430919 -1.5707963267949 0" />
+    <parent
+      link="M2_Link_2" />
+    <child
+      link="M2_Link_3" />
+    <axis
+      xyz="0 0.999617164896092 0.0276680979667927" />
+  </joint>
+  <link
+    name="M2_Link_4">
+    <inertial>
+      <origin
+        xyz="-0.0977499952357743 -0.0266699999999996 0.293036975000499"
+        rpy="0 0 0" />
+      <mass
+        value="0.0456606488806741" />
+      <inertia
+        ixx="4.32672545363548E-05"
+        ixy="5.9557004103818E-23"
+        ixz="4.5169102326326E-21"
+        iyy="4.32672545363549E-05"
+        iyz="-5.34828624626601E-20"
+        izz="-1.32394768711179E-21" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Dual_Arm/meshes/M2_Link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M2_J3"
+    type="continuous">
+    <origin
+      xyz="0 0.0425488591408991 -0.170907303133212"
+      rpy="-4.9212043211653E-16 0.591936715477021 -1.5707963267949" />
+    <parent
+      link="M2_Link_3" />
+    <child
+      link="M2_Link_4" />
+    <axis
+      xyz="-0.84498185678136 0 -0.534794971657667" />
+  </joint>
+</robot>

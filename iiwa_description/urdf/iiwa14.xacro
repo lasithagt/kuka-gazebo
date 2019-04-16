@@ -8,8 +8,7 @@
   <!-- Include Utilities -->
   <xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
   <!-- Include EOAT -->
-  <xacro:include filename="$(find iiwa_description)/urdf/juans_eoat.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/Dual_Arm.xacro" />
   <xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.urdf.xacro" />
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
@@ -388,7 +387,7 @@
     
     <!--Extensions -->
     <!--<xacro:juans_eoat robot_name="${robot_name}"/>--> <!--Comented out EOAT-->
-    <xacro:gripper_eoat robot_name="${robot_name}"/>
+    <xacro:dual_arm_manipulator robot_name="${robot_name}"/>
     <xacro:pulsating_surface />
     <xacro:iiwa_gazebo robot_name="${robot_name}"/>
     <xacro:iiwa_transmission hardware_interface="${hardware_interface}"/>

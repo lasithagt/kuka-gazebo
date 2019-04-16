@@ -99,7 +99,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/base_link.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/base_link.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -124,7 +124,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/base_link.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/base_link.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -162,7 +162,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -187,7 +187,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -225,7 +225,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -253,7 +253,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -307,7 +307,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_0.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_0.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -332,7 +332,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_0.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_0.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -370,7 +370,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_1.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_1.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -395,7 +395,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_1.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_1.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -449,7 +449,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_2.stl</uri>
+              <uri>//home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_2.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -474,7 +474,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_2.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_2.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -528,7 +528,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_3.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_3.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -553,7 +553,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_3.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_3.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -607,7 +607,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_4.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_4.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -632,7 +632,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_4.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_4.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -686,7 +686,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_5.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_5.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -711,7 +711,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_5.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_5.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -765,7 +765,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_6.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_6.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -790,7 +790,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_6.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_6.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -844,7 +844,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_7.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/link_7.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -869,7 +869,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_7.stl</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/visual/link_7.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -933,7 +933,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_base.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_base.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -958,7 +958,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_base.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_base.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1012,7 +1012,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1037,7 +1037,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1102,7 +1102,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1127,7 +1127,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1182,7 +1182,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1207,7 +1207,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <material>
@@ -1262,7 +1262,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <surface>
@@ -1287,7 +1287,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/juan/catkin_kuka/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
+              <uri>/home/lasitha/Documents/ROS_ws/kuka_sim_ws/src/kuka-iiwa/iiwa_description/meshes/iiwa14/collision/gripper_claw.STL</uri>
             </mesh>
           </geometry>
           <material>

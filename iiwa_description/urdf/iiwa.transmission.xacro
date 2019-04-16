@@ -111,7 +111,7 @@
     </actuator>
   </transmission>
 -->
-
+<!--
 <transmission name="claw_1_tran">
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
@@ -159,6 +159,7 @@
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
+  -->
 
 <transmission name="pulsating_surface_tran_1">
       <robotNamespace>/${robot_name}</robotNamespace>
