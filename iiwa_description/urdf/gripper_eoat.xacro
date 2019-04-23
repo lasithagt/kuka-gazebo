@@ -58,9 +58,9 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="2000"
+      lower="-1.57"
+      upper="1.57"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
@@ -122,7 +122,7 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="2000"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
@@ -185,7 +185,7 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="2000"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
@@ -242,9 +242,9 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
-      effort="2000"
+      lower="-1.57"
+      upper="1.57"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
@@ -306,7 +306,7 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="2000"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
@@ -369,7 +369,7 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="2000"
+      effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
