@@ -24,7 +24,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL"/>
+         <!-- <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL"/>-->
         </geometry>
         <material name="Grey"/>
       </visual>
@@ -42,9 +42,9 @@
     <joint name="prismatic_joint" type="prismatic">
       <parent link="post"/>
       <child link="surface"/>
-      <origin xyz="0 0 0.3" rpy="0 0 1.5707"/>
+      <origin xyz="0 0 -0.3" rpy="0 0 1.5707"/>
       <axis xyz="0 0 1"/>
-      <limit lower="-0.1" upper="0.3"
+      <limit lower="-0.8" upper="0.3"
              effort="10000" velocity="10000" />
       <dynamics damping="1" friction = "1"/>
     </joint>

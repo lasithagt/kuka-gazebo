@@ -172,7 +172,127 @@
       </actuator>
     </transmission>
 
-<transmission name="pulsating_surface_tran_1">
+  <transmission name="J_21_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="J_21">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="J_21_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="J_22_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="J_22">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="J_22_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="J_23_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="J_23">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="J_23_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="J_24_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="J_24">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="J_24_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="gripper_base_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="gripper_base_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="gripper_base_joint_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="claw_1_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_1_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_1_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="claw_2_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="claw_2_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="claw_2_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="2_gripper_base_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="2_gripper_base_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="2_gripper_base_joint_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="2_claw_1_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="2_claw_1_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="2_claw_1_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="2_claw_2_joint_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="2_claw_2_joint">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="2_claw_2_motor">
+  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  <transmission name="pulsating_surface_tran_1">
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="prismatic_joint">

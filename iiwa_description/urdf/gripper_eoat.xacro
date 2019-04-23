@@ -49,10 +49,10 @@
     name="gripper_base_joint"
     type="revolute">
     <origin
-      xyz="0 0 0.045"
-      rpy="0 0 0" />
+      xyz="0 -0.16 0"
+      rpy="${PIhalf} 0 0" />
     <parent
-      link="${robot_name}_link_7" />
+      link="Link4" />
     <child
       link="gripper_base_link" />
     <axis
@@ -189,6 +189,191 @@
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
+  <link
+    name="2_gripper_base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.00892"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.00003391"
+        ixy="0"
+        ixz="0"
+        iyy="0.00003391"
+        iyz="0"
+        izz="0.00003391" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2_gripper_base_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.16 0"
+      rpy="${PIhalf} 0 0" />
+    <parent
+      link="L2_4" />
+    <child
+      link="2_gripper_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="2000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+  <link
+    name="2_claw_1_link">
+    <inertial>
+      <origin
+        xyz="-0.02212 0 0.0052"
+        rpy="0 0 0" />
+      <mass
+        value="0.00848" />
+      <inertia
+        ixx="3.2E-7"
+        ixy="0"
+        ixz="0"
+        iyx="0"
+        iyy="1.89E-6"
+        iyz="0"
+        izx="-6.7E-7"
+        izy="0"
+        izz="1.6E-6" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2_claw_1_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.01979 0.0175"
+      rpy="0 0.1 ${PIhalf}" />
+    <parent
+      link="2_gripper_base_link" />
+    <child
+      link="2_claw_1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="2000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+  
+   <link
+    name="2_claw_2_link">
+    <inertial>
+      <origin
+        xyz="-0.02212 0 0.0052"
+        rpy="0 0 0" />
+      <mass
+        value="0.00848" />
+      <inertia
+        ixx="3.2E-7"
+        ixy="0"
+        ixz="0"
+        iyx="0"
+        iyy="1.89E-6"
+        iyz="0"
+        izx="-6.7E-7"
+        izy="0"
+        izz="1.6E-6" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2_claw_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01979 0.0175"
+      rpy="0 0.1 -${PIhalf}" />
+    <parent
+      link="2_gripper_base_link" />
+    <child
+      link="2_claw_2_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="2000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+  <!--
    <link
     name="claw_3_link">
     <inertial>
@@ -313,5 +498,6 @@
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
   </joint>
+-->
   </xacro:macro>
 </robot>

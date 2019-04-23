@@ -10,11 +10,12 @@
   <!-- Include EOAT -->
   <xacro:include filename="$(find iiwa_description)/urdf/Dual_Arm.xacro" />
   <xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.urdf.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" />
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
   <xacro:property name="safety_controller_k_vel" value="2" /> 
-  <xacro:property name="joint_damping" value="0.1" />
-  <xacro:property name="joint_friction" value="0.1"/>
+  <xacro:property name="joint_damping" value="0.4" />
+  <xacro:property name="joint_friction" value="0.4"/>
   <xacro:property name="max_effort" value="300"/>
   <xacro:property name="max_velocity" value="10"/>
   
@@ -388,12 +389,11 @@
     <!--Extensions -->
     <!--<xacro:juans_eoat robot_name="${robot_name}"/>--> <!--Comented out EOAT-->
     <xacro:dual_arm_manipulator robot_name="${robot_name}"/>
+    <xacro:gripper_eoat robot_name="${robot_name}"/>
     <xacro:pulsating_surface />
     <xacro:iiwa_gazebo robot_name="${robot_name}"/>
     <xacro:iiwa_transmission hardware_interface="${hardware_interface}"/>
 
-    
-    
   </xacro:macro>
   
 </robot>
