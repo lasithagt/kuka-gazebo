@@ -47,12 +47,12 @@
   EffortJointInterface_dual_arm_base_joint_controller:
     type: effort_controllers/JointPositionController
     joint: dual_arm_base_joint
-    pid: {p: 0, i: 0, d: 0, i_clamp_min: -10000, i_clamp_max: 10000}  
+    pid: {p: 800, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}  
     
   EffortJointInterface_J_1_controller:
     type: effort_controllers/JointPositionController
     joint: J_1
-    pid: {p: 0, i: 0, d: 0, i_clamp_min: -10000, i_clamp_max: 10000}
+    pid: {p: 120, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}
 
   EffortJointInterface_J_2_controller:
     type: effort_controllers/JointPositionController
@@ -72,7 +72,7 @@
   EffortJointInterface_J_21_controller:
     type: effort_controllers/JointPositionController
     joint: J_21
-    pid: {p: 0, i: 0, d: 0, i_clamp_min: -10000, i_clamp_max: 10000}
+    pid: {p: 120, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}
 
   EffortJointInterface_J_22_controller:
     type: effort_controllers/JointPositionController
@@ -153,21 +153,65 @@
     type: position_controllers/JointPositionController
     joint: iiwa_joint_7
 
-  PositionJointInterface_J8_controller:
+  PositionJointInterface_dual_arm_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: dual_arm_base_joint
+    
+  PositionJointInterface_J_1_controller:
     type: position_controllers/JointPositionController
     joint: J_1
-    
-  PositionJointInterface_J9_controller:
-    type: position_controllers/JointPositionController
-    joint: J_2
 
-  PositionJointInterface_J10_controller:
+  PositionJointInterface_J_2_controller:
     type: position_controllers/JointPositionController
-    joint: J_3  
+    joint: J_2 
 
-  PositionJointInterface_J11_controller:
+  PositionJointInterface_J_3_controller:
+    type: position_controllers/JointPositionController
+    joint: J_3
+
+  PositionJointInterface_J_4_controller:
     type: position_controllers/JointPositionController
     joint: J_4
+
+  PositionJointInterface_J_21_controller:
+    type: position_controllers/JointPositionController
+    joint: J_21
+
+  PositionJointInterface_J_22_controller:
+    type: position_controllers/JointPositionController
+    joint: J_22 
+
+  PositionJointInterface_J_23_controller:
+    type: position_controllers/JointPositionController
+    joint: J_23
+
+  PositionJointInterface_J_24_controller:
+    type: position_controllers/JointPositionController
+    joint: J_24
+
+  PositionJointInterface_gripper_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: gripper_base_joint
+
+  PositionJointInterface_claw_1_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_1_joint
+
+  PositionJointInterface_claw_2_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_2_joint
+
+  PositionJointInterface_2_gripper_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_gripper_base_joint
+
+  PositionJointInterface_2_claw_1_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_claw_1_joint
+
+  PositionJointInterface_2_claw_2_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_claw_2_joint
 
   PositionJointInterface_PS_controller:
     type: position_controllers/JointPositionController

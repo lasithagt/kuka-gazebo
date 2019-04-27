@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:macro name="dual_arm_manipulator" params="robot_name">
-  <xacro:property name="joint_friction" value="0.01" />
-  <xacro:property name="joint_damping" value="0.01" />
+  <xacro:property name="joint_friction" value="0.005" />
+  <xacro:property name="joint_damping" value="0.005" />
   <xacro:property name="PIhalf" value="1.570796" />
   <xacro:property name="PI" value="3.141592" />
   <link
@@ -117,8 +117,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -177,8 +177,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -236,8 +236,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -296,8 +296,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -355,8 +355,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -414,8 +414,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -473,8 +473,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -532,8 +532,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="-1"
+      upper="1"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
