@@ -117,8 +117,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-3.14"
+      upper="3.14"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -177,8 +177,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-1.57"
+      upper="1.57"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -236,8 +236,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-3.14"
+      upper="3.14"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -296,8 +296,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-1.57"
+      upper="1.57"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -355,8 +355,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-3.14"
+      upper="3.14"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -414,8 +414,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-1.57"
+      upper="1.57"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -473,8 +473,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-3.14"
+      upper="3.14"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -532,8 +532,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1"
-      upper="1"
+      lower="-1.57"
+      upper="1.57"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
