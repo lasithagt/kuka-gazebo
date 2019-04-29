@@ -53,11 +53,14 @@ def gripObject():
     print("Lower bound2: " + str(lb))
     print("Upper bound2: " + str(up))
 
-    qinit = [0] * ik_solver.number_of_joints
-    qinit2 = [0] * ik_solver2.number_of_joints
+    qinit = [-0.2934661551582609, -0.08162442352922827, -
+             0.003015193424318774, 0.40880813669625127, -0.04521353165214581]
+    qinit2 = [-0.03967407282925528, -0.1412745962124653,
+              0.0805731133513401, 0.587582286146036, -0.12278869200741127]
 
-    brx = bry = brz = 9999
-    bx = by = bz = 0.001
+    brx = bry = 90
+    brz = 90
+    bx = by = bz = 0.02
 
     while not rospy.is_shutdown():
         message = Float64()
@@ -75,7 +78,9 @@ def gripObject():
             rxyz.append(float(command))
             command = raw_input('Specify location Rz\n')
             rxyz.append(float(command))
-            sol = ik_solver.get_ik(qinit, xyz[0], xyz[1], xyz[2], rxyz[0], rxyz[1], rxyz[2], 1,
+            command = raw_input('Specify location Ry\n')
+            rxyz.append(float(command))
+            sol = ik_solver.get_ik(qinit, xyz[0], xyz[1], xyz[2], rxyz[0], rxyz[1], rxyz[2], rxyz[3],
                                    bx, by, bz,
                                    brx, bry, brz)
             print(sol)
@@ -85,20 +90,11 @@ def gripObject():
                 command = raw_input("Go to coordinates? y/n")
                 if command == "y":
                     qinit = sol
-                mylist = numpy.linspace(1, 10, 10)
-                count = 0
-                tempsol = list(sol)
-                for i in tempsol:
-                    tempsol[count] = i / len(mylist)
-                    count = count + 1
-                rate = rospy.Rate(2)
-                for i in mylist:
                     count = 0
-                    for c in tempsol:
-                        message.data = c * i
+                    for c in sol:
+                        message.data = c
                         arm1Publishers[count].publish(message)
                         count = count + 1
-                    rate.sleep()
         elif int(command) == 2:
             command = raw_input('Specify location X\n')
             xyz = [float(command)]
@@ -112,7 +108,9 @@ def gripObject():
             rxyz.append(float(command))
             command = raw_input('Specify location Rz\n')
             rxyz.append(float(command))
-            sol = ik_solver2.get_ik(qinit2, xyz[0], xyz[1], xyz[2], rxyz[0], rxyz[1], rxyz[2], 1,
+            command = raw_input('Specify location Ry\n')
+            rxyz.append(float(command))
+            sol = ik_solver2.get_ik(qinit2, xyz[0], xyz[1], xyz[2], rxyz[0], rxyz[1], rxyz[2], rxyz[3],
                                     bx, by, bz,
                                     brx, bry, brz)
             print(sol)
@@ -122,58 +120,49 @@ def gripObject():
                 command = raw_input("Go to coordinates? y/n")
                 if command == "y":
                     qinit2 = sol
-                    mylist = numpy.linspace(1, 10, 10)
                     count = 0
-                    tempsol = list(sol)
-                    for i in tempsol:
-                        tempsol[count] = i / len(mylist)
+                    for c in sol:
+                        message.data = c
+                        arm2Publishers[count].publish(message)
                         count = count + 1
-                    rate = rospy.Rate(2)
-                    for i in mylist:
-                        count = 0
-                        for c in tempsol:
-                            message.data = c * i
-                            arm2Publishers[count].publish(message)
-                            count = count + 1
-                        rate.sleep()
     # elif int(command) == 2:
-    #	command = raw_input('Gripper number? 1/2')
-    #	torque = float(raw_input('Specify torque'))
-    #	if int(command) == 1:
-    #			for i in gripper1Publishers:
-    #				message.data = torque
-    #				i.publish(message)
-    #	elif int(command) == 2:
-    #		for i in gripper2Publishers:
-    #				message.data = torque
-    #				i.publish(message)
+    #   command = raw_input('Gripper number? 1/2')
+    #   torque = float(raw_input('Specify torque'))
+    #   if int(command) == 1:
+    #           for i in gripper1Publishers:
+    #               message.data = torque
+    #               i.publish(message)
+    #   elif int(command) == 2:
+    #       for i in gripper2Publishers:
+    #               message.data = torque
+    #               i.publish(message)
 
-    # 	if (command == 'Engage gripper'):
-    #		torque = raw_input('Specify torque\n')
-    # 		message.data = float(torque)
-    # 		for publisher in clawPublishers:
-    # 			publisher.publish(message.data)
-    # 	elif (command == 'Disengage gripper'):
-    # 		message = Float64()
-    # 		message.data = -0.01
-    # 		for publisher in clawPublishers:
-    # 			publisher.publish(message)
-    # 	elif (command == 'Oscillate surface'):
-    # 		userinput = raw_input('Specify amplitude, offset and duration in s\n')
-    # 		userinput = userinput.split()
-    # 		time = numpy.linspace(0,float(userinput[2]),10*float(userinput[2]))
-    # 		rate = rospy.Rate(10)
-    # 		for t in time:
-    # 			pos = float(userinput[1])+float(userinput[0])*math.sin(math.pi*t)
-    # 			message.data=pos
-    # 			surfacePublisher.publish(message)
-    # 			rate.sleep()
-    # 	elif (command == 'Step response surface'):
-    # 		position = raw_input('Input step response set point\n')
-    # 		message.data = float(position)
-    # 		surfacePublisher.publish(message)
-    # 	else:
-    # 		print("Command not recognized")
+    #   if (command == 'Engage gripper'):
+    #       torque = raw_input('Specify torque\n')
+    #       message.data = float(torque)
+    #       for publisher in clawPublishers:
+    #           publisher.publish(message.data)
+    #   elif (command == 'Disengage gripper'):
+    #       message = Float64()
+    #       message.data = -0.01
+    #       for publisher in clawPublishers:
+    #           publisher.publish(message)
+    #   elif (command == 'Oscillate surface'):
+    #       userinput = raw_input('Specify amplitude, offset and duration in s\n')
+    #       userinput = userinput.split()
+    #       time = numpy.linspace(0,float(userinput[2]),10*float(userinput[2]))
+    #       rate = rospy.Rate(10)
+    #       for t in time:
+    #           pos = float(userinput[1])+float(userinput[0])*math.sin(math.pi*t)
+    #           message.data=pos
+    #           surfacePublisher.publish(message)
+    #           rate.sleep()
+    #   elif (command == 'Step response surface'):
+    #       position = raw_input('Input step response set point\n')
+    #       message.data = float(position)
+    #       surfacePublisher.publish(message)
+    #   else:
+    #       print("Command not recognized")
 
 
 if __name__ == '__main__':
