@@ -112,23 +112,6 @@
       <provideFeedback>true</provideFeedback>
     </gazebo>
 
-    <!--EOAT-->
-<!--
-    <gazebo reference="rotating_base_link">
-      <material>Gazebo/Grey</material>
-      <mu1>0.2</mu1>
-      <mu2>0.2</mu2>
-      <selfCollide>1</selfCollide>
-    </gazebo>
-
-
-    <gazebo reference="rotating_arm_link">
-      <material>Gazebo/Orange</material>
-      <mu1>0.2</mu1>
-      <mu2>0.2</mu2>
-      <selfCollide>1</selfCollide>
-    </gazebo>
--->
     <gazebo reference="gripper_base_link">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>

@@ -5,10 +5,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_1">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_1">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -17,10 +16,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_2">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_2">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -29,10 +27,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_3">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_3">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -41,10 +38,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_4">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_4">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -53,10 +49,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_5">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_5">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -65,10 +60,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_6">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_6">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -77,10 +71,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${robot_name}_joint_7">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
+	<hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="${robot_name}_motor_7">
-	<hardwareInterface>${hardware_interface}</hardwareInterface>
 	<mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -116,10 +109,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="claw_1_joint">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="claw_1_motor">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -128,10 +120,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="claw_2_joint">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="claw_2_motor">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -140,10 +131,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="claw_3_joint">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="claw_3_motor">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -152,10 +142,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="claw_4_joint">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="claw_4_motor">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
@@ -164,10 +153,9 @@
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="prismatic_joint">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
       </joint>
       <actuator name="pulsating_surface_motor_1">
-  <hardwareInterface>${hardware_interface}</hardwareInterface>
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
