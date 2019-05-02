@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="complete_chain" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<!-- Import all Gazebo-customization elements, including Gazebo colors -->
+	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
+	<!-- Import Transmissions -->
+	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
+	<!-- Include Utilities -->
+	<xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
+	<!-- Include EOAT -->
+	<xacro:include filename="$(find iiwa_description)/urdf/iiwa14.xacro"/>
+	<xacro:include filename="$(find iiwa_description)/urdf/kuka_base_frame.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/Dual_Arm.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" />
+
+
+	<xacro:arg name="hardware_interface" default="EffortJointInterface"/>
+	<xacro:arg name="robot_name" default="iiwa"/>
+	<xacro:arg name="origin_xyz" default="0 0 0"/>
+	<xacro:arg name="origin_rpy" default="0 0 0"/>
+
+
+	<xacro:kuka_base_frame robot_name="$(arg robot_name)"/>
+
+	<xacro:iiwa14 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
+    	<origin xyz="$(arg origin_xyz)" rpy="$(arg origin_rpy)" />
+  	</xacro:iiwa14>
+
+
+  	<xacro:iiwa_gazebo robot_name="$(arg robot_name)"/>
+	<xacro:dual_arm_manipulator robot_name="$(arg robot_name)"/>
+	<xacro:gripper_eoat robot_name="$(arg robot_name)"/>
+	<xacro:pulsating_surface />
+
+	<xacro:iiwa_gazebo robot_name="$(arg robot_name)"/>
+	<xacro:iiwa_transmission hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)"/>
+
+</robot>

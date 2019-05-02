@@ -1,43 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:macro name = "pulsating_surface">
-<!--
-  <joint
-    name="fixed_1"
-    type="fixed">
-    <parent
-      link="world" />
-    <child
-      link="post" />
-     <origin xyz="1.5 0.25 0" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-  </joint>
+<xacro:macro name = "pulsating_surface" >
 
-  <link name="post">
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="5"/>
-        <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
-      </inertial>
-      
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-         
-        </geometry>
-        <material name="Grey"/>
-      </visual>
-      
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Base.STL"/>
-        </geometry>
-        <material name="Grey"/>
-      </collision>
-    </link>-->
-    
     <!-- joint between post and surface -->
     <joint name="prismatic_joint" type="prismatic">
       <parent link="world"/>
