@@ -39,7 +39,7 @@
 
     <!--Frame-->
     <gazebo reference="frame">
-      <material>Gazebo/Orange</material>
+      <material>Gazebo/Grey</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
@@ -116,21 +116,21 @@
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link1">
+    <gazebo reference="Link_L1">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link2">
+    <gazebo reference="Link_L2">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link3">
+    <gazebo reference="Link_L3">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
@@ -138,35 +138,35 @@
     </gazebo>
 
 
-    <gazebo reference="Link4">
+    <gazebo reference="Link_L4">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="L2_1">
+    <gazebo reference="Link_R1">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="L2_2">
+    <gazebo reference="Link_R2">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="L2_3">
+    <gazebo reference="Link_R3">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="L2_4">
+    <gazebo reference="Link_R4">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
@@ -194,21 +194,21 @@
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="2_gripper_base_link">
+    <gazebo reference="gripper_base_link_2">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="2_claw_1_link">
+    <gazebo reference="claw_1_link_2">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="2_claw_2_link">
+    <gazebo reference="claw_2_link_2">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
@@ -289,13 +289,13 @@
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="surface">
-      <material>Gazebo/Orange</material>
+    <gazebo reference="table_surface">
+      <material>Gazebo/WhiteEmissive</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
       <kd>2500</kd>
       <kp>10000</kp>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
   </xacro:macro>

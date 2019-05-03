@@ -7,55 +7,70 @@
   <xacro:macro name="kuka_base_frame" params="robot_name">
   <link name="world" />
   
-  <joint
-    name="fixed"
-    type="fixed">
-    <parent
-      link="world" />
-    <child
-      link="frame" />
+  <joint name="fixed_frame_joint" type="fixed">
+    <parent link="world" />
+    <child link="frame_kuka" />
     <axis xyz="0 0 1"/>
   </joint>
-  <link
-    name="frame">
+  <link name="frame_kuka">
     <inertial>
-      <origin
-        xyz="1.5 0.25 1.25"
-        rpy="0 0 0" />
-      <mass
-        value="2697" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+      <origin xyz="1.5 0.25 1.25" rpy="0 0 0" />
+      <mass value="2697" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/visual/base_link.STL"/>
+        <mesh filename="package://iiwa_description/meshes/iiwa14/visual/base_link.STL"/>
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.64706 0.61961 0.58824 1" />
+        <color rgba="0.64706 0.61961 0.58824 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/base_link.STL" />
+        <mesh filename="package://iiwa_description/meshes/iiwa14/collision/base_link.STL" />
       </geometry>
     </collision>
   </link>
+
+
+    <!-- joint between post and surface -->
+  <!-- joint name="table_joint" type="prismatic">
+    <parent link="world"/>
+    <child link="surface_table"/>
+    <origin xyz="1.5 15 0.10" rpy="0 0 1.5707"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.8" upper="0.3"
+           effort="10000" velocity="10000" />
+    <dynamics damping="0.5" friction = "0.1"/>
+  </joint>
+
+  <link name="surface_table">
+    <inertial>
+      <origin xyz="0 0 0.0015" rpy="0 0 0"/>
+      <mass value="3.645"/>
+      <inertia ixx="0.0276"  ixy="0"  ixz="0" iyy="0.00711" iyz="0" izz="0.03417" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL"/>
+      </geometry>
+      <material name="Grey"/>
+    </collision>
+  </link> -->
 
   </xacro:macro>
 </robot>

@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:property name="PIhalf" value="1.070796" />
+  <xacro:property name="PI" value="3.141592" />
+  <xacro:property name="joint_friction" value="0.001" />
+  <xacro:property name="joint_damping" value="0.5" />
+  <xacro:macro name="gripper_R" params="robot_name">
+
+<joint name="gripper_base_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 -0.16 0"
+      rpy="${PIhalf} 0 0" />
+    <parent
+      link="Link_R4" />
+    <child
+      link="gripper_base_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+  <link name="gripper_base_link_2">
+    <inertial>
+      <origin
+        xyz="0 0 0.00892"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia ixx="0.00003391" ixy="0" ixz="0" iyy="0.00003391" iyz="0" izz="0.00003391" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="claw_1_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 -0.01979 0.0175"
+      rpy="0 0.8 ${PIhalf}" />
+    <parent
+      link="gripper_base_link_2" />
+    <child
+      link="claw_1_link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.0"
+      upper="1.57"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+
+  <link name="claw_1_link_2">
+    <inertial>
+      <origin
+        xyz="-0.02212 0 0.0052"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia ixx="3.2E-7" ixy="0" ixz="0" iyx="0" iyy="1.89E-6" iyz="0" izx="-6.7E-7" izy="0" izz="1.6E-6" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="claw_2_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.01979 0.0175"
+      rpy="0 0.8 -${PIhalf}" />
+    <parent
+      link="gripper_base_link_2" />
+    <child
+      link="claw_2_link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.0"
+      upper="1.57"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+  </joint>
+  <link
+    name="claw_2_link_2">
+    <inertial>
+      <origin
+        xyz="-0.02212 0 0.0052"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia ixx="3.2E-7" ixy="0" ixz="0" iyx="0" iyy="1.89E-6" iyz="0" izx="-6.7E-7" izy="0" izz="1.6E-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/gripper_claw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  </xacro:macro>
+</robot>

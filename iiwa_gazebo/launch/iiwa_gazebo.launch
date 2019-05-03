@@ -14,7 +14,7 @@
     <arg name="hardware_interface" default="EffortJointInterface" />
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
-    <arg name="trajectory" default="false"/>
+    <arg name="trajectory" default="true"/>
     
     <!-- Loads the Gazebo world. -->
     <include file="$(find iiwa_gazebo)/launch/iiwa_world.launch">
@@ -28,7 +28,7 @@
         
         <include file="$(find iiwa_control)/launch/iiwa_control.launch">
             <arg name="hardware_interface" value="$(arg hardware_interface)" />
-            <arg name="controllers" value="joint_state_controller $(arg hardware_interface)_trajectory_controller" />
+            <arg name="controllers" value="$(arg hardware_interface)_trajectory_controller" />
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>
@@ -41,28 +41,18 @@
         <include file="$(find iiwa_control)/launch/iiwa_control.launch">
             <arg name="hardware_interface" value="$(arg hardware_interface)" />
             <arg name="controllers" value="joint_state_controller
-                 PositionJointInterface_J1_controller
-                 PositionJointInterface_J2_controller
-                 PositionJointInterface_J3_controller
-                 PositionJointInterface_J4_controller
-                 PositionJointInterface_J5_controller
-                 PositionJointInterface_J6_controller
-                 PositionJointInterface_J7_controller
-                 $(arg hardware_interface)_dual_arm_base_joint_controller
+                 $(arg hardware_interface)_J1_controller
+                 $(arg hardware_interface)_J2_controller
+                 $(arg hardware_interface)_J3_controller
+                 $(arg hardware_interface)_J4_controller
+                 $(arg hardware_interface)_J5_controller
+                 $(arg hardware_interface)_J6_controller
+                 $(arg hardware_interface)_J7_controller
                  $(arg hardware_interface)_J_1_controller
                  $(arg hardware_interface)_J_2_controller
                  $(arg hardware_interface)_J_3_controller
                  $(arg hardware_interface)_J_4_controller
-                 $(arg hardware_interface)_J_21_controller
-                 $(arg hardware_interface)_J_22_controller
-                 $(arg hardware_interface)_J_23_controller
-                 $(arg hardware_interface)_J_24_controller
-                 $(arg hardware_interface)_gripper_base_joint_controller
-                 $(arg hardware_interface)_claw_1_joint_controller
-                 $(arg hardware_interface)_claw_2_joint_controller
-                 $(arg hardware_interface)_2_gripper_base_joint_controller
-                 $(arg hardware_interface)_2_claw_1_joint_controller
-                 $(arg hardware_interface)_2_claw_2_joint_controller
+
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />

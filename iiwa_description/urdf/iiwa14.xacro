@@ -9,7 +9,7 @@
   <xacro:property name="max_effort" value="5000"/>
   <xacro:property name="max_velocity" value="100"/>
   <xacro:property name="joint_friction" value="0.005" />
-  <xacro:property name="joint_damping" value="0.005" />
+  <xacro:property name="joint_damping" value="0.5" />
   <xacro:property name="PIhalf" value="1.570796" />
   <xacro:property name="PI" value="3.141592" />
   

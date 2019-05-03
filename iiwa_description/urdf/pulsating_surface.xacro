@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:macro name = "pulsating_surface" >
+  <xacro:macro name = "pulsating_surface" params="robot_name">
 
     <!-- joint between post and surface -->
-    <joint name="prismatic_joint" type="prismatic">
+    <joint name="table_joint" type="revolute">
       <parent link="world"/>
-      <child link="surface"/>
-      <origin xyz="1.5 0.25 0" rpy="0 0 1.5707"/>
+      <child link="table_surface"/>
+      <origin xyz="1.5 0.25 0.15" rpy="0 0 1.5707"/>
       <axis xyz="0 0 1"/>
       <limit lower="-0.8" upper="0.3"
              effort="10000" velocity="10000" />
-      <dynamics damping="1" friction = "1"/>
+      <dynamics damping="0.5" friction = "0.1"/>
     </joint>
 
-    <link name="surface">
+    <link name="table_surface">
       <inertial>
-        <origin xyz="0 0 0.0015" rpy="0 0 0"/>
-        <mass value="3.645"/>
-        <inertia ixx="0.0276"  ixy="0"  ixz="0" iyy="0.00711" iyz="0" izz="0.03417" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.645"/>
+        <inertia ixx="0.0276" ixy="0" ixz="0" iyy="0.00711" iyz="0" izz="0.03417" />
       </inertial>
       
       <visual>
@@ -26,7 +26,10 @@
         <geometry>
           <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Pulsating Surface/Surface.STL"/>
         </geometry>
-        <material name="Grey"/>
+        <material
+          name="">
+          <color rgba="0.64706 0.61961 0.58824 1" />
+        </material>
       </visual>
       
       <collision>
@@ -37,7 +40,7 @@
         <material name="Grey"/>
       </collision>
     </link>
-</xacro:macro>
+  </xacro:macro>
     
 </robot>
 
