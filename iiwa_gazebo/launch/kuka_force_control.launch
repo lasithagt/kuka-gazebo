@@ -15,9 +15,9 @@
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
     <arg name="trajectory" default="true"/>
-    <arg name="controller_params" default="iiwa_control" />
+    <arg name="controller_params" default="force_control" />
     <arg name="environment" default="test" />
-    <arg name="urdf_load" default="iiwa14_upload" />
+    <arg name="urdf_load" default="kuka_force_control_demo" />
     
     <!-- Loads the Gazebo world. -->
     <include file="$(find iiwa_gazebo)/launch/iiwa_world.launch">
@@ -41,7 +41,7 @@
         
     </group>
     
-    <!-- Spawn controllers - it uses an Effort Controller for each joint -->
+    <!-- Spawn controllers - it uses an Effort Controller for each joint. To load individual controllers for each joint. -->
    <group ns="$(arg robot_name)" unless="$(arg trajectory)">
         
         <include file="$(find iiwa_control)/launch/iiwa_control.launch">
@@ -63,32 +63,6 @@
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>
-
-        <!--
-                joint_state_controller
-                 $(arg hardware_interface)_J1_controller
-                 $(arg hardware_interface)_J2_controller
-                 $(arg hardware_interface)_J3_controller
-                 $(arg hardware_interface)_J4_controller
-                 $(arg hardware_interface)_J5_controller
-                 $(arg hardware_interface)_J6_controller
-                 $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_dual_arm_base_joint_controller
-                 $(arg hardware_interface)_J_1_controller
-                 $(arg hardware_interface)_J_2_controller
-                 $(arg hardware_interface)_J_3_controller
-                 $(arg hardware_interface)_J_4_controller
-                 $(arg hardware_interface)_J_21_controller
-                 $(arg hardware_interface)_J_22_controller
-                 $(arg hardware_interface)_J_23_controller
-                 $(arg hardware_interface)_J_24_controller
-                 $(arg hardware_interface)_gripper_base_joint_controller
-                 $(arg hardware_interface)_claw_1_joint_controller
-                 $(arg hardware_interface)_claw_2_joint_controller
-                 $(arg hardware_interface)_2_gripper_base_joint_controller
-                 $(arg hardware_interface)_2_claw_1_joint_controller
-                 $(arg hardware_interface)_2_claw_2_joint_controller
-        -->
         
     </group>
 </launch>

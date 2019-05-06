@@ -3,16 +3,12 @@
 	<xacro:macro name="complete_chain" params="robot_name">
 
 	<!-- Import all Gazebo-customization elements, including Gazebo colors -->
-	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
-	<!-- Import Transmissions -->
-<!-- 	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
- -->	<xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.transmission.xacro" />
 	<!-- Include Utilities -->
 	<xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
 	<!-- Include EOAT -->
 	<xacro:include filename="$(find iiwa_description)/urdf/iiwa14.xacro"/>
 	<xacro:include filename="$(find iiwa_description)/urdf/kuka_base_frame.xacro" />
-	<xacro:include filename="$(find iiwa_description)/urdf/Dual_Arm.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/Dual_Arm.xacro" />
 	<xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.xacro" />
 	<!-- <xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" /> -->
 

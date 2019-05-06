@@ -12,10 +12,12 @@
     <arg name="hardware_interface" default="PositionJointInterface"/>
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa"/>
+    <arg name="environment" default="test" />
+    <arg name="urdf_load" default="iiwa14_upload" />
     
     <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find iiwa_gazebo)/worlds/test.sdf"/>
+        <arg name="world_name" value="$(find iiwa_gazebo)/worlds/$(arg environment).sdf"/>
         <arg name="debug" value="$(arg debug)" />
         <arg name="gui" value="$(arg gui)" />
         <arg name="paused" value="$(arg paused)"/>
@@ -27,7 +29,7 @@
 
        
     <!-- Load the URDF with the given hardware interface into the ROS Parameter Server -->
-    <include file="$(find iiwa_description)/launch/$(arg model)_upload.launch">
+    <include file="$(find iiwa_description)/launch/$(arg urdf_load).launch">
         <arg name="hardware_interface" value="$(arg hardware_interface)"/>
         <arg name="robot_name" value="$(arg robot_name)" />
     </include>

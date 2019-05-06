@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot name="complete_chain" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<!-- Import all Gazebo-customization elements, including Gazebo colors -->
-	<xacro:include filename="$(find iiwa_description)/urdf/complete_chain.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/complete_chain.xacro" />
 	<xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.xacro" />
-	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/iiwa.gazebo.xacro" />
 	<xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.transmission.xacro" />
-	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
+	<xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/iiwa.transmission.xacro" />
 
 
 	<xacro:pulsating_surface robot_name="$(arg robot_name)"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_right.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_left.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/gripper_L.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/gripper_R.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/dual_arm_right.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/dual_arm_left.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/gripper_L.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/gripper_R.xacro" />
   <xacro:macro name="dual_arm_manipulator" params="robot_name">
   <xacro:property name="joint_friction" value="0.005" />
   <xacro:property name="joint_damping" value="0.005" />
