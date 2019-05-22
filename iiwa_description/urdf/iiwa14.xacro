@@ -275,6 +275,9 @@
       <limit lower="${-175 * PI / 180}" upper="${175 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
+      <sensor name="force_torque" type="force_torque">
+          <update_rate>100</update_rate>
+      </sensor>
     </joint>
     
     <link name="${robot_name}_link_7">

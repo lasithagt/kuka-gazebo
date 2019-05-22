@@ -21,18 +21,7 @@
 // getTimeToDestination() can also return negative values and the info from the cabinet take some milliseconds to update once the motion is started.
 // That means that if you call getTimeToDestination() right after you set a target pose, you might get the wrong info (e.g. a negative number).
 // This function tried to call getTimeToDestination() until something meaningful is obtained or until a maximum amount of time passed.
-void sleepForMotion(iiwa_ros::iiwaRos& iiwa, const double maxSleepTime) {
-    double ttd = iiwa.getTimeToDestinationService().getTimeToDestination();
-    ros::Time start_wait = ros::Time::now();
-    while (ttd < 0.0 && (ros::Time::now() - start_wait) < ros::Duration(maxSleepTime)) {
-        ros::Duration(0.5).sleep();
-        ttd = iiwa.getTimeToDestinationService().getTimeToDestination();
-    }
-    if (ttd > 0.0) {
-        ROS_INFO_STREAM("Sleeping for " << ttd << " seconds.");
-        ros::Duration(ttd).sleep();
-    }
-}
+
 
 int readFile_nlines(const std::string fileNm) {
     int n_data = 0;
@@ -117,8 +106,6 @@ int main (int argc, char **argv) {
     iiwa_ros::iiwaRosGazebo my_iiwa;
     my_iiwa.init(nh);
 
-
-
     // Dynamic parameter to choose the rate at wich this node should run
 
     // nh.param("ros_rate", ros_rate, 100.0); // 0.1 Hz = 10 seconds
@@ -163,40 +150,8 @@ int main (int argc, char **argv) {
 
     while (ros::ok()) {
         if (1) {
-            /*my_iiwa.getSmartServoService().setJointImpedanceMode(iiwa_ros::jointQuantityFromDouble(5000,5000,5500,5000,5500,5000,5500), iiwa_ros::jointQuantityFromDouble(0.7));
-              if (!init) {
-              while (!my_iiwa.getJointPosition(command_joint_position)) {} //If the destination has already been achieved. idle.
-              command_joint_position.position.a1 = data_q(0,0);
-              command_joint_position.position.a2 = data_q(1,0);
-              command_joint_position.position.a3 = data_q(2,0);
-              command_joint_position.position.a4 = data_q(3,0);
-              command_joint_position.position.a5 = data_q(4,0);
-              command_joint_position.position.a6 = data_q(5,0);
-              command_joint_position.position.a7 = data_q(6,0);
-
-              my_iiwa.setJointPosition(command_joint_position);
-              std::cerr << "Sent Command" << std::endl;
-              std::cerr << command_joint_position << std::endl;
-
-              sleepForMotion(my_iiwa, 5.0);
-
-            //loop_rate_->sleep(); // Sleep for some millisecond. The while loop will run every 10 seconds in this example.
-            init = 1;
-
-            }*/
 
             for (int j = 0;j < n_data_qd;j++) {
-
-
-                //my_iiwa.getJointPosition(state_joint_position);
-                //my_iiwa.getJointVelocity(state_joint_velocity);
-                //my_iiwa.getJointTorque(state_joint_torque);
-
-
-                //data << state_joint_position.position.a1 << " " << state_joint_position.position.a2 << " " << state_joint_position.position.a3 << " " << \
-                //state_joint_position.position.a4 << " " << state_joint_position.position.a5 << " " << state_joint_position.position.a6 << " " << state_joint_position.position.a7 << state_joint_velocity.velocity.a1 << " " << state_joint_velocity.velocity.a2 << " " << state_joint_velocity.velocity.a3 << " " << \
-                //state_joint_velocity.velocity.a4 << " " << state_joint_velocity.velocity.a5 << " " << state_joint_velocity.velocity.a6 << " " << state_joint_velocity.velocity.a7 << state_joint_torque.torque.a1 << " " << state_joint_torque.torque.a2 << " " << state_joint_torque.torque.a3 << " " << \
-                //state_joint_torque.torque.a4 << " " << state_joint_torque.torque.a5 << " " << state_joint_torque.torque.a6 << " " << state_joint_torque.torque.a7 << "\n";
 
                 double scale;
                 scale = 10;
@@ -212,9 +167,6 @@ int main (int argc, char **argv) {
                 // std::cerr << command_joint_velocity << std::endl;
 
                 my_iiwa.setJointVelocity(command_joint_velocity);
-
-
-
 
                 //std::cerr << "Sending velocity commands" << std::endl;
                 loop_rate_->sleep();

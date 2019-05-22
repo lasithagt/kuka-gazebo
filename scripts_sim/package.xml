@@ -1,5 +1,5 @@
 <package>
-  <name>iiwa_tool_examples</name>
+  <name>scripts_sim</name>
   <version>0.0.0</version>
   <description>The iiwa_tool_examples package</description>
   <author email="salvo.virga@tum.de">Salvo Virga</author>

@@ -4,15 +4,16 @@
   <xacro:macro name = "pulsating_surface" params="robot_name">
 
     <!-- joint between post and surface -->
-    <joint name="table_joint" type="revolute">
+    <joint name="table_joint" type="prismatic">
       <parent link="world"/>
-      <child link="table_surface"/>
+      <child link="table_surface_interface"/>
       <origin xyz="1.5 0.25 0.15" rpy="0 0 1.5707"/>
       <axis xyz="0 0 1"/>
       <limit lower="-0.8" upper="0.3"
              effort="10000" velocity="10000" />
       <dynamics damping="0.5" friction = "0.1"/>
     </joint>
+
 
     <link name="table_surface">
       <inertial>
@@ -39,7 +40,73 @@
         </geometry>
         <material name="Grey"/>
       </collision>
+
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.5</mu>
+            <mu2>0.5</mu2>
+          </ode>
+        </friction>
+        <bounce>
+          <restitution_coefficient>0.01</restitution_coefficient>
+          <threshold>0.01</threshold>
+        </bounce>
+        <contact>
+          <ode>
+            <max_vel>0.1</max_vel>
+            <soft_cfm>0.8</soft_cfm>
+            <soft_erp>0.8</soft_erp>
+            <kd>2500</kd>
+            <kp>10</kp>
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+      </surface>
     </link>
+
+    <joint name="table_joint_tilt" type="revolute">
+      <parent link="table_surface_interface"/>
+      <child link="table_surface"/>
+      <origin xyz="0 0 0" rpy="0 0 1.5707"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-0.8" upper="0.3"
+             effort="10000" velocity="10000" />
+      <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+
+    <link name="table_surface_interface">
+        <visual><geometry><sphere radius=".00001"/></geometry></visual>
+        <collision><geometry><sphere radius=".00001"/></geometry></collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.0001"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1"  iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+
+<!--     <joint name="table_joint_tilt2" type="revolute">
+      <parent link="table_surface_interface"/>
+      <child link="table_surface"/>
+      <origin xyz="0 0 0" rpy="0 0 1.5707"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-0.8" upper="0.3"
+             effort="10000" velocity="10000" />
+      <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+
+    <link name="table_surface_interface">
+        <visual><geometry><sphere radius=".00001"/></geometry></visual>
+        <collision><geometry><sphere radius=".00001"/></geometry></collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.0001"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1"  iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+ -->
+
+
   </xacro:macro>
     
 </robot>

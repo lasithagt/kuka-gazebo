@@ -12,25 +12,25 @@
       </plugin>
     </gazebo>
 
-<!--Force sensors
+<!-- Force sensors -->
     <gazebo>
       <plugin name='gazebo_ros_ft_sensor' filename='libgazebo_ros_ft_sensor.so'>
           <robotNamespace>/${robot_name}</robotNamespace>
-          <topicName>ft_sensor_data</topicName>
+          <topicName>ft_sensor_ee</topicName>
           <jointName>${robot_name}_joint_7</jointName>
           <updateRate>10</updateRate>
       </plugin>
   </gazebo>
 
-  <gazebo>
+<!--   <gazebo>
       <plugin name='gazebo_ros_ft_sensor_claw' filename='libgazebo_ros_ft_sensor.so'>
           <robotNamespace>/${robot_name}</robotNamespace>
           <topicName>ft_sensor_data_claw</topicName>
           <jointName>claw_1_joint</jointName>
           <updateRate>10</updateRate>
       </plugin>
-  </gazebo>
--->
+  </gazebo> -->
+
  
     <gazebo>
       <static>0</static>

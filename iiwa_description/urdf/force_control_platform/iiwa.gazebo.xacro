@@ -290,7 +290,7 @@
       <selfCollide>1</selfCollide>
     </gazebo>
 -->
-    <gazebo reference="post">
+  <!--   <gazebo reference="post">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
@@ -305,7 +305,7 @@
       <kp>10000</kp>
       <selfCollide>1</selfCollide>
     </gazebo>
-
+ -->
   </xacro:macro>
 
 </robot>

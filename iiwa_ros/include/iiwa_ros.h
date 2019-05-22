@@ -23,7 +23,6 @@
 
 #pragma once
 
-#include <iiwa_msgs/CartesianVelocity.h>
 #include <iiwa_msgs/JointPosition.h>
 #include <iiwa_msgs/JointStiffness.h>
 #include <iiwa_msgs/JointTorque.h>
@@ -35,9 +34,6 @@
 #include <geometry_msgs/WrenchStamped.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/JointState.h>
-#include <smart_servo_service.h>
-#include <path_parameters_service.h>
-#include <time_to_destination_service.h>
 #include <ros/ros.h>
 #include <vector>
 
@@ -179,15 +175,6 @@ namespace iiwa_ros {
     
 
     virtual bool getJointDamping(iiwa_msgs::JointDamping& value) {return 0;}
-    
-
-    SmartServoService getSmartServoService() { return smart_servo_service_; }
-    
-
-    PathParametersService getPathParametersService() { return path_parameters_service_; }
-    
-
-    TimeToDestinationService getTimeToDestinationService() { return time_to_destination_service_; };
     
 
     virtual void setCartesianPose(const geometry_msgs::PoseStamped& position) {}

@@ -15,10 +15,15 @@
       <mu2>0.2</mu2>
     </gazebo>
 
-    <gazebo reference="surface">
-      <material>Gazebo/Black</material>
-      <mu1>0.2</mu1>
-      <mu2>0.2</mu2>
+    <gazebo reference="table_surface">
+      <material>Gazebo/WoodPallet</material>
+      <turnGravityOff>true</turnGravityOff>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kd>20</kd>
+      <kp>0.1</kp>
+      <selfCollide>1</selfCollide>
     </gazebo>
+
   </xacro:macro>
 </robot>

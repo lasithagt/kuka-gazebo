@@ -4,7 +4,6 @@
 
 	<!-- Import all Gazebo-customization elements, including Gazebo colors -->
 	<xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
-	<xacro:include filename="$(find iiwa_description)/urdf/force_control_platform/pulsating_surface.gazebo.xacro" />
 
 	<!-- Import Transmissions -->
 

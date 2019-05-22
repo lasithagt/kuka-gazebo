@@ -2,7 +2,7 @@
 <launch>
     
     <!-- ===================================================================================== -->
-    <!-- |    Lauch file to start Gazebo with an IIWA using various controllers.	         | -->
+    <!-- |    Lauch file to start Gazebo with ane Model using various controllers.	         | -->
     
     <!-- |    It allows to customize the name of the robot, for each robot                   | -->
     <!-- |	  its topics will be under a nameespace with the same name as the robot's.       | -->
@@ -33,7 +33,7 @@
         
         <include file="$(find iiwa_control)/launch/iiwa_control.launch">
             <arg name="hardware_interface" value="$(arg hardware_interface)" />
-            <arg name="controllers" value="$(arg hardware_interface)_trajectory_controller" />
+            <arg name="controllers" value="$(arg hardware_interface)_trajectory_controller $(arg hardware_interface)_table_joint_controller $(arg hardware_interface)_table_joint_tilt_controller" />
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
             <arg name="controller_params" value="$(arg controller_params)" />
@@ -41,28 +41,26 @@
         
     </group>
     
+    <!-- Loads the python script to move the table  -->
+    <node name="table_pulsate" pkg="iiwa_tool_examples" type="move_table.py" respawn="true"
+          output="screen" args="" />
+
+    <!-- moves the joint states to a feasible position -->
+
+    <!-- start the controllers -->
+
+
     <!-- Spawn controllers - it uses an Effort Controller for each joint. To load individual controllers for each joint. -->
-   <group ns="$(arg robot_name)" unless="$(arg trajectory)">
+<!--    <group ns="$(arg robot_name)" unless="$(arg trajectory)">
         
         <include file="$(find iiwa_control)/launch/iiwa_control.launch">
             <arg name="hardware_interface" value="$(arg hardware_interface)" />
             <arg name="controllers" value="joint_state_controller
-                 $(arg hardware_interface)_J1_controller
-                 $(arg hardware_interface)_J2_controller
-                 $(arg hardware_interface)_J3_controller
-                 $(arg hardware_interface)_J4_controller
-                 $(arg hardware_interface)_J5_controller
-                 $(arg hardware_interface)_J6_controller
-                 $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_J_1_controller
-                 $(arg hardware_interface)_J_2_controller
-                 $(arg hardware_interface)_J_3_controller
-                 $(arg hardware_interface)_J_4_controller
-
+                 $(arg hardware_interface)_prismatic_joint_controller
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>
         
-    </group>
+    </group> -->
 </launch>
