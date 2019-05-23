@@ -9,4 +9,6 @@ TODO: (KUKA force control)
 
 TODO: (Dual arm design optimization)
 
-Goal: A system design which 
+Goal: A system design which takes into account collision free path and maximize the dexterity. 
+
+References:

@@ -78,6 +78,17 @@
       </actuator>
     </transmission>
 
+<!--   <transmission name="${robot_name}_tran_8">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="kuka_fitting_ee">
+      <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${robot_name}_motor_8">
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission> -->
+
 
 <!-- 
   <transmission name="pulsating_surface_tran_1">

@@ -31,8 +31,8 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${orocos_kdl_INCLUDE_DIRS})
 #target_link_libraries(setting_control_mode ${catkin_LIBRARIES})
 
 
-include_directories(${GAZEBO_INCLUDE_DIRS})
-link_directories(${PROJECT_NAME}_gazebo_transport_to_ros_topic ${GAZEBO_LIBRARY_DIRS})
+# include_directories(${GAZEBO_INCLUDE_DIRS})
+# link_directories(${PROJECT_NAME}_gazebo_transport_to_ros_topic ${GAZEBO_LIBRARY_DIRS})
 # list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 #add_executable(listener src/gz_topic_listner.cpp)
