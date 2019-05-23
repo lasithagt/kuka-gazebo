@@ -11,13 +11,13 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from std_msgs.msg import Float64
 from trac_ik_python.trac_ik import IK
 import transformations as trans
-
+import math
 
 PI = 3.14
 # starting time
 time_start = 0.0
 x_b = 0.001; y_b = 0.001; z_b = 0.001
-r_x = 0.001;  r_y = 0.001;  r_z = 0.001
+r_x = 0.01;  r_y = 0.01;  r_z = 0.01
 
 # initialize the solver
 # ik_solver = IK('iiwa_link_0', 'kuka_fitting_ee_')
@@ -67,7 +67,7 @@ def generate_desired_path():
 	# print(points[:,1])
 
 	quats = np.zeros((4,n))
-	jpos  = np.zeros((7,n))
+	jpos  = np.zeros((8,n))
 
 	orien = lambda p : [[-2*p[0]],[-2*p[1]],[-2*p[2]]]
 
@@ -78,14 +78,14 @@ def generate_desired_path():
 	R_b = trans.rotation_matrix(np.pi, [0, 1, 0], [0, 0, 1])
 
 	T_b[:3,:3] = R_b[:3, :3]
-	T_b[:3,-1] = np.array([0.,0.,0.95])
+	T_b[:3,-1] = np.array([0.,0.1,1.01])
 	
 	v0 = np.dot(T_b[:3, :3], np.array([[0,0,-1]]).T)
 
 	for i in range(n):
 		v1 = np.dot(R_b[:3,:3], np.array([orien(points[:,i])]).T) 
 		print(v1.T.flatten())
-		v2 = np.dot(R_b[:3,:3], np.array([points[:,i]]).T)  + np.array([[0.],[0.],[0.95]])
+		v2 = np.dot(R_b[:3,:3], np.array([points[:,i]]).T)  + np.array([[0.],[0.1],[1.01]])
 
 		# check this multiplication
 		# M = np.multiply(R_b[3:,3:], trans.rotation_matrix(trans.angle_between_vectors(v0.T.flatten().tolist(), v1.T.flatten().tolist()), trans.vector_product(v0.T.flatten().tolist(), v1.T.flatten().tolist())).T)
@@ -101,7 +101,8 @@ def generate_desired_path():
 		# print(pose)
 		# print(jpos[:,i])
 		# set the new seed state
-		seed_state = jpos[:,i]
+		if (not math.isnan(jpos[0,i])):
+			seed_state = jpos[:,i]
 
 	# print(points)
 	print(quats.T)
@@ -164,9 +165,12 @@ if __name__ == '__main__':
 	for i in range(100):
 		times      = [t[i]]
 		positions  = [jtraj[:,i].T]
-		velocities = [[]]	
-		if (positions[0] is not np.nan):
+		velocities = [[]]
+		
+		if (not math.isnan(positions[0][0])):
 			follow_timed_joint_trajectory(positions, velocities, times)
-		rospy.sleep(0.2)
+			print(positions[0][0])	
+			print(i)
+			rospy.sleep(0.1)
 
-	rospy.sleep(2)
+	rospy.sleep(10)

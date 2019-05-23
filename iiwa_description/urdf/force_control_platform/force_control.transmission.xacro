@@ -78,7 +78,7 @@
       </actuator>
     </transmission>
 
-<!--   <transmission name="${robot_name}_tran_8">
+  <transmission name="${robot_name}_tran_8">
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="kuka_fitting_ee">
@@ -87,7 +87,7 @@
       <actuator name="${robot_name}_motor_8">
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-    </transmission> -->
+    </transmission>
 
 
 <!-- 

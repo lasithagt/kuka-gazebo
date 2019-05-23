@@ -49,7 +49,7 @@
       </geometry>
     </collision>
   </link>
-<!-- 
+
   <joint name="kuka_fitting_ee" type="revolute">
     <parent link="kuka_fitting_link"/>
     <child link="kuka_fitting_ee_"/>
@@ -71,7 +71,7 @@
         iyy="0.0001" iyz="0.0"
         izz="0.0001" />
     </inertial>
-  </link> -->
+  </link>
 
   </xacro:macro>
 

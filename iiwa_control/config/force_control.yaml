@@ -172,7 +172,7 @@
       - iiwa_joint_5
       - iiwa_joint_6
       - iiwa_joint_7
-      # - kuka_fitting_ee
+      - kuka_fitting_ee
       # - table_joint
       
       # VALUES ARE NOT CORRECT !
@@ -184,7 +184,7 @@
       iiwa_joint_5: {p: 23,  d: 3, i: 5, i_clamp: 30}
       iiwa_joint_6: {p: 13,  d: 3, i: 3, i_clamp: 30}
       iiwa_joint_7: {p: 8,  d: 4, i: 2.5, i_clamp: 10}
-      # kuka_fitting_ee: {p: 1,  d: 0, i: 0, i_clamp: 0}
+      kuka_fitting_ee: {p: 1,  d: 0, i: 0, i_clamp: 0}
       # table_joint: {p: 10,  d: 2, i: 0, i_clamp: 10}
     constraints:
       goal_time: 1.0                   # Override default
