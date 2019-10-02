@@ -14,7 +14,7 @@
     <arg name="hardware_interface" default="EffortJointInterface" />
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
-    <arg name="trajectory" default="true"/>
+    <arg name="trajectory" default="false"/>
     <arg name="controller_params" default="iiwa_control" />
     <arg name="environment" default="test" />
     <arg name="urdf_load" default="iiwa14_upload" />
@@ -58,6 +58,10 @@
                  $(arg hardware_interface)_J_2_controller
                  $(arg hardware_interface)_J_3_controller
                  $(arg hardware_interface)_J_4_controller
+                 $(arg hardware_interface)_J_21_controller
+                 $(arg hardware_interface)_J_22_controller
+                 $(arg hardware_interface)_J_23_controller
+                 $(arg hardware_interface)_J_24_controller
 
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />

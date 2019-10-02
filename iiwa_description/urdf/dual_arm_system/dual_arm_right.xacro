@@ -19,8 +19,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.14"
-      upper="3.14"
+      lower="-${PI}"
+      upper="${PI}"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -29,17 +29,18 @@
     name="Link_R1">
     <inertial>
       <origin
-        xyz="0.00302464836897415 0.00148467584367146 -0.0196712040191069"
+        xyz="0 -0.00002198 0.03386448"
         rpy="0 0 0" />
       <mass
-        value="0.523170961054133" />
+        value="0.34855237" />
       <inertia
-        ixx="9.86315700006277E-05"
-        ixy="-1.83712585125958E-06"
-        ixz="1.50310533353745E-05"
-        iyy="0.000101226511355012"
-        iyz="6.90483440689725E-06"
-        izz="4.61898687854836E-06" />
+        ixx="0.00041198"
+        ixy="0"
+        ixz="0"
+        iyy="0.00042179"
+        iyz="-0.00000013"
+        izy="-0.00000013"
+        izz="0.00045583" />
     </inertial>
     <visual>
       <origin
@@ -61,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_1.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_1_collision.STL" />
       </geometry>
     </collision>
   </link>
@@ -80,8 +81,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1.57"
-      upper="1.57"
+      lower="-${PI}"
+      upper="${PI}"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -91,17 +92,19 @@
     name="Link_R2">
     <inertial>
       <origin
-        xyz="-0.0841816926424142 -9.94783774485586E-05 0.00119770428720625"
+        xyz="-0.00002616 -0.08182747 0.00586724"
         rpy="0 0 0" />
       <mass
-        value="0.361073886022953" />
+        value=" 0.14210191" />
       <inertia
-        ixx="1.38598083295319E-06"
-        ixy="-3.76180464461997E-07"
-        ixz="5.01830776658136E-09"
-        iyy="0.000417336089370728"
-        iyz="3.07943156555252E-09"
-        izz="0.000417240402620394" />
+        ixx="0.00061848"
+        ixy="0.00000018"
+        ixz="0"
+        iyx="0.00000018"
+        iyy="0.00003828"
+        iyz="-0.00005076"
+        izy="-0.00005076"
+        izz="0.00060901" />
     </inertial>
     <visual>
       <origin
@@ -123,7 +126,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_2.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_2_collision.STL" />
       </geometry>
     </collision>
   </link>
@@ -144,8 +147,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.14"
-      upper="3.14"
+      lower="-${PI}"
+      upper="${PI}"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -155,17 +158,18 @@
     name="Link_R3">
     <inertial>
       <origin
-        xyz="0.00289722994622221 0.00112305403125196 0.0290055866352336"
+        xyz="0.00018087 0 0.11630050"
         rpy="0 0 0" />
       <mass
-        value="0.217746913814738" />
+        value="0.09637272" />
       <inertia
-        ixx="9.95073774261661E-05"
-        ixy="-2.667473422779E-07"
-        ixz="-3.12070252262036E-06"
-        iyy="0.000106288781760734"
-        iyz="-2.88857039626312E-06"
-        izz="6.98820523527226E-06" />
+        ixx="0.00031529"
+        ixy="0"
+        ixz="0.00000077"
+        iyy="0.00031517"
+        iyz="0"
+        izx="0.00000077"
+        izz="0.00001827" />
     </inertial>
     <visual>
       <origin
@@ -187,7 +191,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_3.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_3_collision.STL" />
       </geometry>
     </collision>
   </link>
@@ -207,8 +211,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1.57"
-      upper="1.57"
+      lower="-${PI}"
+      upper="${PI}"
       effort="20000"
       velocity="13" />
     <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
@@ -217,17 +221,18 @@
     name="Link_R4">
       <inertial>
       <origin
-        xyz="-0.00106966507570738 -0.0713978397746767 -0.00106966507570611"
+        xyz=" -0.01338844 0 0.00944589"
         rpy="0 0 0" />
       <mass
-        value="0.217746913814738" />
+        value="0.01812912" />
       <inertia
-        ixx="9.95073774261661E-05"
-        ixy="-2.667473422779E-07"
-        ixz="-3.12070252262036E-06"
-        iyy="0.000106288781760734"
-        iyz="-2.88857039626312E-06"
-        izz="6.98820523527226E-06" />
+        ixx="0.00000196"
+        ixy="0"
+        ixz="-0.00000004"
+        iyy="0.00000943"
+        iyz="0"
+        izx="-0.00000004"
+        izz="0.00001043" />
     </inertial>
     <visual>
       <origin
@@ -249,7 +254,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_4.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_4_collision.STL" />
       </geometry>
     </collision>
   </link>
