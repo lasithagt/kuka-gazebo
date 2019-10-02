@@ -11,7 +11,8 @@
     type="revolute">
     <origin
       xyz="-0.0744445637977397 0.152871273073736 -0.110435575211296"
-      rpy="-1.43251148060093 -0.775712981728982 2.94539473140516" />
+      rpy="-1.7091 0.7757 -0.1962" />
+      <!-- rpy="-1.43251148060093 -0.775712981728982 2.94539473140516"-->
     <parent
       link="base_link" />
     <child
@@ -47,7 +48,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link1.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_1.STL" />
       </geometry>
       <material
         name="">
@@ -61,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link1.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_1.STL"  />
       </geometry>
     </collision>
   </link> 
@@ -70,8 +71,10 @@
     name="J_L2"
     type="revolute">
     <origin
-      xyz="0 0 -0.0635"
-      rpy="1.57079632679489 -0.380374098489847 0.317429885556193" />
+      xyz="0 0 0.098815"
+      rpy="-${PIhalf} 0 0" />
+      <!-- xyz="0 0 -0.0635"
+      rpy="1.57079632679489 -0.380374098489847 0.317429885556193"-->
     <parent
       link="Link_L1" />
     <child
@@ -109,7 +112,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link2.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_2.STL" />
       </geometry>
       <material
         name="">
@@ -123,7 +126,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link2.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -132,8 +135,10 @@
     name="J_L3"
     type="revolute">
     <origin
-      xyz="-0.178688999999999 -0.00012700000000021 0"
-      rpy="-1.57079632679489 -1.0547118733939E-15 1.5707963267949" />
+      xyz="0 -0.16645 0"
+      rpy="${PIhalf} 0 0" />
+      <!-- xyz="-0.178688999999999 -0.00012700000000021 0"
+      rpy="-1.57079632679489 -1.0547118733939E-15 1.5707963267949"-->
     <parent
       link="Link_L2" />
     <child
@@ -162,7 +167,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link3.STL" />
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_3.STL" />
       </geometry>
       <material
         name="">
@@ -176,7 +181,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link3.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -185,8 +190,10 @@
     name="J_L4"
     type="revolute">
     <origin
-      xyz="0.0266700000000004 0.0019050000000066 0.0609600000000012"
-      rpy="-1.5707963267949 -0.824186362211141 -1.57079632679489" />
+      xyz="-0.019005 0 0.1675"
+      rpy="0 -${PIhalf} 0" />
+      <!-- xyz="0.0266700000000004 0.0019050000000066 0.0609600000000012"
+      rpy="-1.5707963267949 -0.824186362211141 -1.57079632679489"-->
     <parent
       link="Link_L3" />
     <child
@@ -222,7 +229,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link4.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_4.STL" />
       </geometry>
       <material
         name="">
@@ -236,7 +243,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/Link4.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/Link_4.STL" />
       </geometry>
     </collision>
   </link>
