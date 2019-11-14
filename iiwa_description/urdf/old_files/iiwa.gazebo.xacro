@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="iiwa_gazebo" params="robot_name">
+    
+    <!-- Load Gazebo lib and set the robot namespace -->
+
+   <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/${robot_name}</robotNamespace>
+      </plugin>
+    </gazebo>
+
+<!-- Force sensors -->
+    <gazebo>
+      <plugin name='gazebo_ros_ft_sensor' filename='libgazebo_ros_ft_sensor.so'>
+          <robotNamespace>/${robot_name}</robotNamespace>
+          <topicName>ft_sensor_ee</topicName>
+          <jointName>${robot_name}_joint_7</jointName>
+          <updateRate>10</updateRate>
+      </plugin>
+  </gazebo>
+
+<!--   <gazebo>
+      <plugin name='gazebo_ros_ft_sensor_claw' filename='libgazebo_ros_ft_sensor.so'>
+          <robotNamespace>/${robot_name}</robotNamespace>
+          <topicName>ft_sensor_data_claw</topicName>
+          <jointName>claw_1_joint</jointName>
+          <updateRate>10</updateRate>
+      </plugin>
+  </gazebo> -->
+
+ 
+    <gazebo>
+      <static>1</static>
+    </gazebo>
+  
+
+    <!--Frame-->
+    <gazebo reference="frame">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+    <!-- Link0 -->
+    <gazebo reference="${robot_name}_link_0">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link1 -->
+    <gazebo reference="${robot_name}_link_1">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link2 -->
+    <gazebo reference="${robot_name}_link_2">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link3 -->
+    <gazebo reference="${robot_name}_link_3">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+
+    <!-- Link4 -->
+    <gazebo reference="${robot_name}_link_4">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link5 -->
+    <gazebo reference="${robot_name}_link_5">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link6 -->
+    <gazebo reference="${robot_name}_link_6">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Link7 -->
+    <gazebo reference="${robot_name}_link_7">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <!-- Kuka Fitting -->
+    <gazebo reference="kuka_fitting_link">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="base_link">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_L1">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_L2">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_L3">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+
+    <gazebo reference="Link_L4">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_R1">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_R2">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_R3">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="Link_R4">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="gripper_base_link">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_1_link">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_2_link">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="gripper_base_link_2">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_1_link_2">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_2_link_2">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+
+    <gazebo reference="${robot_name}_joint_7">
+      <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+
+
+    <!--EOAT-->
+<!--
+    <gazebo reference="rotating_base_link">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+
+    <gazebo reference="rotating_arm_link">
+      <material>Gazebo/Orange</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+--><!--
+    <gazebo reference="gripper_base_link">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_1_link">
+      <material>Gazebo/Grey</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <gravity>1</gravity>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_1_joint">
+      <provideFeedback>true</provideFeedback>
+    </gazebo>
+
+    <gazebo reference="claw_2_link">
+      <material>Gazebo/Orange</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <gravity>1</gravity>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_3_link">
+      <material>Gazebo/Blue</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <gravity>1</gravity>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+    <gazebo reference="claw_4_link">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <gravity>1</gravity>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+-->
+    <gazebo reference="post">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="table_surface">
+      <material>Gazebo/WhiteEmissive</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <kd>2500</kd>
+      <kp>10000</kp>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>
+

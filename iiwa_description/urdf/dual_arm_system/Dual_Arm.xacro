@@ -63,7 +63,7 @@
   <xacro:dual_arm_right robot_name="${robot_name}"/>
   
   <xacro:dual_arm_left robot_name="${robot_name}"/>
-  <xacro:gripper_R robot_name="$(arg robot_name)"/>
-  <xacro:gripper_L robot_name="$(arg robot_name)"/>
+  <!--<xacro:gripper_R robot_name="$(arg robot_name)"/>
+  <xacro:gripper_L robot_name="$(arg robot_name)"/>-->
   </xacro:macro>
 </robot>

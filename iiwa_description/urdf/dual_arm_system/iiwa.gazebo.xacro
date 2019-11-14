@@ -180,7 +180,7 @@
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
-
+<!--
     <gazebo reference="gripper_base_link">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
@@ -226,7 +226,7 @@
 
     <gazebo reference="${robot_name}_joint_7">
       <provideFeedback>true</provideFeedback>
-    </gazebo>
+    </gazebo>-->
 
 
 

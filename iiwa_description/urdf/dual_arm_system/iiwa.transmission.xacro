@@ -166,7 +166,7 @@
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-
+<!--
   <transmission name="gripper_base_joint_tran">
       <robotNamespace>/${robot_name}</robotNamespace>
       <type>transmission_interface/SimpleTransmission</type>
@@ -231,7 +231,7 @@
       <actuator name="claw_2_motor_2">
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-    </transmission>
+    </transmission>-->
 <!-- 
   <transmission name="pulsating_surface_tran_1">
       <robotNamespace>/${robot_name}</robotNamespace>
