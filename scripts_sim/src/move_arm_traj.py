@@ -16,12 +16,12 @@ import math
 PI = 3.14
 # starting time
 time_start = 0.0
-x_b = 0.001; y_b = 0.001; z_b = 0.001
-r_x = 0.01;  r_y = 0.01;  r_z = 0.01
+x_b = 0.0001; y_b = 0.0001; z_b = 0.0001
+r_x = 010;  r_y = 010;  r_z = 010
 
 # initialize the solver
 # ik_solver = IK('iiwa_link_0', 'kuka_fitting_ee_')
-ik_solver = IK('iiwa_link_0', 'iiwa_link_7')
+ik_solver = IK('iiwa_link_0', 'kuka_fitting_ee_')
 
 # set the joint limits
 # lower_bounds = np.array([])
@@ -30,7 +30,7 @@ ik_solver = IK('iiwa_link_0', 'iiwa_link_7')
 def follow_timed_joint_trajectory(positions, velocities, times):
  
     jt = JointTrajectory()
-    jt.joint_names = ['iiwa_joint_1', 'iiwa_joint_2', 'iiwa_joint_3', 'iiwa_joint_4', 'iiwa_joint_5', 'iiwa_joint_6', 'iiwa_joint_7']
+    jt.joint_names = ['iiwa_joint_1', 'iiwa_joint_2', 'iiwa_joint_3', 'iiwa_joint_4', 'iiwa_joint_5', 'iiwa_joint_6', 'iiwa_joint_7', 'kuka_fitting_ee']
 
     jt.header.stamp = rospy.Time.now()
  
@@ -57,7 +57,7 @@ def ik_solve(base_frame, end_frame, seed_state, pose):
 	return ik_solution
 
 
-def generate_desired_path():
+def generate_desired_path(seed_state):
 	r = 0.0254 # radius of the sphere
 	n = 100
 	phi = np.linspace(0.0, np.pi, num=n); theta = np.linspace(0.0, 0.0, num=n)
@@ -71,22 +71,20 @@ def generate_desired_path():
 
 	orien = lambda p : [[-2*p[0]],[-2*p[1]],[-2*p[2]]]
 
-	seed_state = [0.0] * 7
 
 	# transformation from the real kuka base to the location of the workplace
 	T_b = np.identity(4)
 	R_b = trans.rotation_matrix(np.pi, [0, 1, 0], [0, 0, 1])
 
 	T_b[:3,:3] = R_b[:3, :3]
-	T_b[:3,-1] = np.array([0.,0.1,1.01])
+	T_b[:3,-1] = np.array([0.,0.05,1.2])
 	
 	v0 = np.dot(T_b[:3, :3], np.array([[0,0,-1]]).T)
 
 	for i in range(n):
 		v1 = np.dot(R_b[:3,:3], np.array([orien(points[:,i])]).T) 
-		print(v1.T.flatten())
-		v2 = np.dot(R_b[:3,:3], np.array([points[:,i]]).T)  + np.array([[0.],[0.1],[1.01]])
-
+		v2 = np.dot(R_b[:3,:3], np.array([points[:,i]]).T)  + np.array([[0.],[0.05],[1.2]])
+		print(v2.T)
 		# check this multiplication
 		# M = np.multiply(R_b[3:,3:], trans.rotation_matrix(trans.angle_between_vectors(v0.T.flatten().tolist(), v1.T.flatten().tolist()), trans.vector_product(v0.T.flatten().tolist(), v1.T.flatten().tolist())).T)
 		M = trans.rotation_matrix(trans.angle_between_vectors(v0.T.flatten(), v1.T.flatten()), trans.vector_product(v0.T.flatten(), v1.T.flatten()))
@@ -96,7 +94,7 @@ def generate_desired_path():
 
 		quats[:,i] = quat
 		pose = np.concatenate((v2.T.flatten(),quat),axis=0)
-		jpos[:,i]  = ik_solve('iiwa_link_0', 'iiwa_link_7', seed_state, pose)
+		jpos[:,i]  = ik_solve('iiwa_link_0', 'kuka_fitting_ee_', seed_state, pose)
 
 		# print(pose)
 		# print(jpos[:,i])
@@ -105,14 +103,14 @@ def generate_desired_path():
 			seed_state = jpos[:,i]
 
 	# print(points)
-	print(quats.T)
+	# print(quats.T)
 	return jpos
 
 
 def move_to_inital_pose(seed_state, pose):
 
 	print(pose)
-	ik_sol = ik_solve('iiwa_link_0', 'iiwa_link_7', seed_state, pose)
+	ik_sol = ik_solve('iiwa_link_0', 'kuka_fitting_ee_s', seed_state, pose)
 
 	# if (ik_sol is None):
 	print(ik_sol)
@@ -138,22 +136,22 @@ if __name__ == '__main__':
 	t = time_start
 
 
-	seed_state = [0.0] * 7
+	seed_state = [0.0] * 8
 	# initial pose to start
-	initial_pose = [0.1,0.0,1.1,0.0,0.0,0.0,1.0]
+	initial_pose = [0.1,0.0,1.2,0.0,0.0,0.0,1.0]
 
 	
-	jtraj = generate_desired_path()
+	jtraj = generate_desired_path(seed_state)
+
 	print(jtraj)
-	print(jtraj.T.shape)
 
 	t = np.linspace(0.1,20,100)
 
 
 	# while not rospy.is_shutdown():
-	move_to_inital_pose(seed_state, initial_pose)
+	# move_to_inital_pose(seed_state, initial_pose)
 
-	rospy.sleep(3)
+	# rospy.sleep(3)
 
 	times      = [3]
 	positions  = [jtraj[:,0].T]

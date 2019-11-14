@@ -38,9 +38,12 @@ def build_traj(start, end, duration):
 
 	return JointTrajectory(joint_names=joint_names, points=[start_pt, end_pt])
 
-def move_table(pos_1, pos_2):
+def move_table(pos_1, pos_1_x, pos_1_y, pos_2, pos_2_y):
 	_pub_pos_pr.publish(pos_1)	
+	_pub_pos_pr_x.publish(pos_1_x)	
+	_pub_pos_pr_y.publish(pos_1_y)	
 	_pub_pos_tilt.publish(pos_2)
+	_pub_pos_tilt_y.publish(pos_2_y)
 
 if __name__ == '__main__':
 
@@ -48,7 +51,13 @@ if __name__ == '__main__':
 	
 	_pub_pos_pr = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_controller/command', Float64,
 	                             queue_size=1)
-	_pub_pos_tilt = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_tilt_controller/command',Float64,
+	_pub_pos_pr_x = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_x_controller/command', Float64,
+	                             queue_size=1)
+	_pub_pos_pr_y = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_y_controller/command', Float64,
+	                             queue_size=1)
+	_pub_pos_tilt = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_tilt_x_controller/command',Float64,
+                             queue_size=1)
+	_pub_pos_tilt_y = rospy.Publisher('/iiwa/EffortJointInterface_table_joint_tilt_y_controller/command',Float64,
                              queue_size=1)
 
 	r = rospy.Rate(100) # 100hz 
@@ -56,9 +65,12 @@ if __name__ == '__main__':
 	# create a sript to run sinusoidal signals forever
 	t = time_start
 	while not rospy.is_shutdown():
-		j1_pos = 0.08*np.sin(2*np.pi*t) + 0.3
-		j2_pos = 0.3*np.cos(2*np.pi*t)
-		move_table(j1_pos, j2_pos)
+		j1_pos   = 0.02 * np.sin(2*np.pi*t) + 0.00
+		j1_pos_x = 0.02 * np.cos(2*np.pi*t) + 0.00
+		j1_pos_y = 0.02 * np.cos(2*np.pi*t) + 0.00
+		j2_pos   = 0.02 * np.cos(1*np.pi*1*t)
+		j2_pos_y = 0.0 * np.cos(1*np.pi*1*t)
+		move_table(j1_pos, j1_pos_x, j1_pos_y, j2_pos, j2_pos_y)
 		t += 0.01
 		r.sleep()	
 

@@ -9,7 +9,7 @@
       <child link="table_surface_interface"/>
       <origin xyz="1.5 0.25 0.15" rpy="0 0 1.5707"/>
       <axis xyz="0 0 1"/>
-      <limit lower="-0.8" upper="0.3"
+      <limit lower="-0.8" upper="1.0"
              effort="10000" velocity="10000" />
       <dynamics damping="0.5" friction = "0.1"/>
     </joint>
@@ -65,15 +65,6 @@
       </surface>
     </link>
 
-    <joint name="table_joint_tilt" type="revolute">
-      <parent link="table_surface_interface"/>
-      <child link="table_surface"/>
-      <origin xyz="0 0 0" rpy="0 0 1.5707"/>
-      <axis xyz="0 1 0"/>
-      <limit lower="-0.8" upper="0.3"
-             effort="10000" velocity="10000" />
-      <dynamics damping="0.5" friction = "0.1"/>
-    </joint>
 
     <link name="table_surface_interface">
         <visual><geometry><sphere radius=".00001"/></geometry></visual>
@@ -85,6 +76,77 @@
         </inertial>
     </link>
 
+    <joint name="table_joint_y" type="prismatic">
+        <parent link="table_surface_interface"/>
+        <child link="table_surface_interface_y"/>
+        <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.8" upper="1.0"
+               effort="10000" velocity="10000" />
+        <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+
+    <link name="table_surface_interface_y">
+        <visual><geometry><sphere radius=".00001"/></geometry></visual>
+        <collision><geometry><sphere radius=".00001"/></geometry></collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.0001"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1"  iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <joint name="table_joint_x" type="prismatic">
+      <parent link="table_surface_interface_y"/>
+      <child link="table_surface_interface_x"/>
+      <origin xyz="0 0.0 0.15" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-0.8" upper="1.0"
+             effort="10000" velocity="10000" />
+      <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+
+
+    <link name="table_surface_interface_x">
+        <visual><geometry><sphere radius=".00001"/></geometry></visual>
+        <collision><geometry><sphere radius=".00001"/></geometry></collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.0001"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1"  iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <joint name="table_joint_tilt_x" type="revolute">
+        <parent link="table_surface_interface_x"/>
+        <child link="table_surface"/>
+        <origin xyz="0 0 0" rpy="0 0 1.5707"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.8" upper="0.3"
+               effort="10000" velocity="10000" />
+        <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+
+<!--     <link name="table_surface_interface_tilt">
+        <visual><geometry><sphere radius=".00001"/></geometry></visual>
+        <collision><geometry><sphere radius=".00001"/></geometry></collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.0001"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1"  iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <joint name="table_joint_tilt_y" type="revolute">
+        <parent link="table_surface_interface_tilt"/>
+        <child link="table_surface"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.8" upper="0.3"
+               effort="10000" velocity="10000" />
+        <dynamics damping="0.5" friction = "0.1"/>
+    </joint>
+ -->
 <!--     <joint name="table_joint_tilt2" type="revolute">
       <parent link="table_surface_interface"/>
       <child link="table_surface"/>

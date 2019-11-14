@@ -53,7 +53,7 @@
   <joint name="kuka_fitting_ee" type="revolute">
     <parent link="kuka_fitting_link"/>
     <child link="kuka_fitting_ee_"/>
-    <origin xyz="0 0 0.1" rpy="0 3.14 0"/>
+    <origin xyz="0 0 -0.13" rpy="0 -3.14 0"/>
     <limit lower="0" upper="0"
            effort="0" velocity="0" />
   </joint>
