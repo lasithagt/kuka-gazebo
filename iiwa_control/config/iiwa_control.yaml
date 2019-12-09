@@ -49,42 +49,42 @@
     joint: dual_arm_base_joint
     pid: {p: 8, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}  
     
-  EffortJointInterface_J_1_controller:
+  EffortJointInterface_J_L1_controller:
     type: effort_controllers/JointPositionController
     joint: J_L1
     pid: {p: 200, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}
 
-  EffortJointInterface_J_2_controller:
+  EffortJointInterface_J_L2_controller:
     type: effort_controllers/JointPositionController
     joint: J_L2
     pid: {p: 2, i: 0.05, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}  
 
-  EffortJointInterface_J_3_controller:
+  EffortJointInterface_J_L3_controller:
     type: effort_controllers/JointPositionController
     joint: J_L3
     pid: {p: 1, i: 0.1, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}
 
-  EffortJointInterface_J_4_controller:
+  EffortJointInterface_J_L4_controller:
     type: effort_controllers/JointPositionController
     joint: J_L4
     pid: {p: 3, i: 0.1, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}
 
-  EffortJointInterface_J_21_controller:
+  EffortJointInterface_J_R1_controller:
     type: effort_controllers/JointPositionController
     joint: J_R1
     pid: {p: 2, i: 1, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}
 
-  EffortJointInterface_J_22_controller:
+  EffortJointInterface_J_R2_controller:
     type: effort_controllers/JointPositionController
     joint: J_R2
     pid: {p: 2, i: 0.05, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}  
 
-  EffortJointInterface_J_23_controller:
+  EffortJointInterface_J_R3_controller:
     type: effort_controllers/JointPositionController
     joint: J_R3
     pid: {p: 1, i: 0.1, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}
 
-  EffortJointInterface_J_24_controller:
+  EffortJointInterface_J_R4_controller:
     type: effort_controllers/JointPositionController
     joint: J_R4
     pid: {p: 3, i: 0.1, d: 0.1, i_clamp_min: -10000, i_clamp_max: 10000}

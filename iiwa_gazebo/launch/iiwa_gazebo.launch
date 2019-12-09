@@ -54,14 +54,21 @@
                  $(arg hardware_interface)_J5_controller
                  $(arg hardware_interface)_J6_controller
                  $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_J_1_controller
-                 $(arg hardware_interface)_J_2_controller
-                 $(arg hardware_interface)_J_3_controller
-                 $(arg hardware_interface)_J_21_controller
-                 $(arg hardware_interface)_J_22_controller
-                 $(arg hardware_interface)_J_23_controller
+                 $(arg hardware_interface)_J_L1_controller
+                 $(arg hardware_interface)_J_L2_controller
+                 $(arg hardware_interface)_J_L3_controller
+                 $(arg hardware_interface)_J_L4_controller
+                 $(arg hardware_interface)_J_R1_controller
+                 $(arg hardware_interface)_J_R2_controller
+                 $(arg hardware_interface)_J_R3_controller
+                 $(arg hardware_interface)_J_R4_controller
+                 "
+                 />
 
-                 "/>
+                 
+                 
+
+                
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>

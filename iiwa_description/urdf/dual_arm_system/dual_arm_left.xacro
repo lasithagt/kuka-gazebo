@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:property name="joint_friction" value="0.005" />
+  <xacro:property name="joint_friction" value="0.00" />
   <xacro:property name="joint_damping" value="1.5" />
   <xacro:property name="PIhalf" value="1.570796" />
   <xacro:property name="PI" value="3.141592" />
@@ -86,7 +86,7 @@
       upper="${PI}"
       effort="20000"
       velocity="13" />
-    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+    <dynamics damping="${joint_damping}" friction = "0"/>
   </joint>
 
 <link
@@ -162,7 +162,8 @@
         xyz="0.00018087 0 0.11630050"
         rpy="0 0 0" />
       <mass
-        value="0.09637272" />
+        value="0.2" />
+        <!-- 0.09637272 -->
       <inertia
         ixx="0.00031529"
         ixy="0"
@@ -225,7 +226,8 @@
         xyz=" -0.01338844 0 0.00944589"
         rpy="0 0 0" />
       <mass
-        value="0.01812912" />
+        value="0.1812912" />
+        <!-- original mass  0.01812912-->
       <inertia
         ixx="0.00000196"
         ixy="0"
