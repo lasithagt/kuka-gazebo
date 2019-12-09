@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:property name="joint_friction" value="0.005" />
-  <xacro:property name="joint_damping" value="0.8" />
+  <xacro:property name="joint_damping" value="1.0" />
   <xacro:property name="PIhalf" value="1.570796" />
   <xacro:property name="PI" value="3.141592" />
   <xacro:macro name="dual_arm_right" params="robot_name">
@@ -10,7 +10,7 @@
     name="J_R1"
     type="revolute">
     <origin
-      xyz="-0.0744445637977397 -0.152871273073736 -0.110435575211296"
+      xyz="-0.0744445637977397 -0.152871273073736 -0.080435575211296"
       rpy="1.7091 0.7757 0.1962" /> <!-- "1.43251148060093 -0.775712981728982 -2.94539473140516" -->
     <parent
       link="base_link" />
@@ -104,7 +104,7 @@
         iyy="0.00003828"
         iyz="-0.00005076"
         izy="-0.00005076"
-        izz="0.00060901" />
+        izz="0.0060901" />
     </inertial>
     <visual>
       <origin
@@ -169,7 +169,7 @@
         iyy="0.00031517"
         iyz="0"
         izx="0.00000077"
-        izz="0.00001827" />
+        izz="0.001827" />
     </inertial>
     <visual>
       <origin
@@ -200,7 +200,7 @@
     name="J_R4"
     type="revolute">
     <origin
-      xyz="-0.019005 0 0.1675"
+      xyz="0.038005 0 0.1675"
       rpy="0 ${PIhalf} ${PI}" />
       <!--xyz="0.0266700000000004 0.0019050000000066 0.0609600000000012"
       rpy="-1.5707963267949 -0.824186362211141 -1.57079632679489"-->
@@ -215,7 +215,7 @@
       upper="${PI}"
       effort="20000"
       velocity="13" />
-    <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
+    <dynamics damping="0" friction = "${joint_friction}"/>
   </joint>
  <link
     name="Link_R4">
@@ -224,7 +224,7 @@
         xyz=" -0.01338844 0 0.00944589"
         rpy="0 0 0" />
       <mass
-        value="0.01812912" />
+        value="0.04812912" />
       <inertia
         ixx="0.00000196"
         ixy="0"
@@ -232,7 +232,7 @@
         iyy="0.00000943"
         iyz="0"
         izx="-0.00000004"
-        izz="0.00001043" />
+        izz="0.001043" />
     </inertial>
     <visual>
       <origin

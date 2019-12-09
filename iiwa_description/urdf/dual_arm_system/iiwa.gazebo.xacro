@@ -180,6 +180,27 @@
       <mu2>0.2</mu2>
       <selfCollide>0</selfCollide>
     </gazebo>
+
+    <gazebo reference="object">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="wristL2_R">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
+
+    <gazebo reference="wristL2_L">
+      <material>Gazebo/Red</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <selfCollide>0</selfCollide>
+    </gazebo>
 <!--
     <gazebo reference="gripper_base_link">
       <material>Gazebo/White</material>

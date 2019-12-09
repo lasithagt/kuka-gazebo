@@ -25,7 +25,6 @@
         <arg name="headless" value="$(arg headless)"/>
         <arg name="physics" default="ode"/>
     </include>
- 
 
        
     <!-- Load the URDF with the given hardware interface into the ROS Parameter Server -->
@@ -35,10 +34,9 @@
     </include>
 
 
-
     <!-- Run a python script to send a service call to gazebo_ros to spawn a URDF robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-          args="-urdf -model $(arg model) -param robot_description -J iiwa_joint_4 0.0" />
+          args="-urdf -model $(arg model) -param robot_description -J iiwa_joint_1 1.57 -J iiwa_joint_4 0.1 -J iiwa_joint_7 0" />
 
-    </launch>
+</launch>
     

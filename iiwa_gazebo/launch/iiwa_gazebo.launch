@@ -57,42 +57,16 @@
                  $(arg hardware_interface)_J_1_controller
                  $(arg hardware_interface)_J_2_controller
                  $(arg hardware_interface)_J_3_controller
-                 $(arg hardware_interface)_J_4_controller
                  $(arg hardware_interface)_J_21_controller
                  $(arg hardware_interface)_J_22_controller
                  $(arg hardware_interface)_J_23_controller
-                 $(arg hardware_interface)_J_24_controller
 
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
         </include>
 
-        <!--
-                joint_state_controller
-                 $(arg hardware_interface)_J1_controller
-                 $(arg hardware_interface)_J2_controller
-                 $(arg hardware_interface)_J3_controller
-                 $(arg hardware_interface)_J4_controller
-                 $(arg hardware_interface)_J5_controller
-                 $(arg hardware_interface)_J6_controller
-                 $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_dual_arm_base_joint_controller
-                 $(arg hardware_interface)_J_1_controller
-                 $(arg hardware_interface)_J_2_controller
-                 $(arg hardware_interface)_J_3_controller
-                 $(arg hardware_interface)_J_4_controller
-                 $(arg hardware_interface)_J_21_controller
-                 $(arg hardware_interface)_J_22_controller
-                 $(arg hardware_interface)_J_23_controller
-                 $(arg hardware_interface)_J_24_controller
-                 $(arg hardware_interface)_gripper_base_joint_controller
-                 $(arg hardware_interface)_claw_1_joint_controller
-                 $(arg hardware_interface)_claw_2_joint_controller
-                 $(arg hardware_interface)_2_gripper_base_joint_controller
-                 $(arg hardware_interface)_2_claw_1_joint_controller
-                 $(arg hardware_interface)_2_claw_2_joint_controller
-        -->
+
         
     </group>
 </launch>

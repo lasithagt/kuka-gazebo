@@ -4,6 +4,9 @@
   <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/dual_arm_left.xacro" />
   <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/gripper_L.xacro" />
   <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/gripper_R.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/miniwrist_right.xacro" />
+  <xacro:include filename="$(find iiwa_description)/urdf/dual_arm_system/miniwrist_left.xacro" />
+
   <xacro:macro name="dual_arm_manipulator" params="robot_name">
   <xacro:property name="joint_friction" value="0.005" />
   <xacro:property name="joint_damping" value="0.005" />
@@ -59,10 +62,15 @@
   </link>
 
  
-
+  <!-- left arm -->
   <xacro:dual_arm_right robot_name="${robot_name}"/>
-  
+
+  <!-- right arm -->
   <xacro:dual_arm_left robot_name="${robot_name}"/>
+
+  <!-- end-effectors -->
+  <xacro:miniwrist_right robot_name="${robot_name}"/>
+  <xacro:miniwrist_left robot_name="${robot_name}"/>
   <!--<xacro:gripper_R robot_name="$(arg robot_name)"/>
   <xacro:gripper_L robot_name="$(arg robot_name)"/>-->
   </xacro:macro>

@@ -70,8 +70,8 @@
     </group>
 
     <!-- Loads the python script to move the table  -->
-    <node name="table_pulsate" pkg="scripts_sim" type="move_table.py" respawn="true"
-          output="screen" args="" />
+<!--     <node name="table_pulsate" pkg="scripts_sim" type="move_table.py" respawn="true"
+          output="screen" args="" /> -->
 
     <!-- moves the joint states to a feasible position -->
 

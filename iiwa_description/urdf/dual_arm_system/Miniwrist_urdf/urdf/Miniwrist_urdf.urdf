@@ -1,0 +1,149 @@
+<robot
+  name="Miniwrist_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.21122973523576E-05 -0.000258666055421581 -0.0504395667584774"
+        rpy="0 0 0" />
+      <mass
+        value="0.0253977949262739" />
+      <inertia
+        ixx="3.49511160259362E-06"
+        ixy="-8.03793468213869E-08"
+        ixz="1.78582674691137E-08"
+        iyy="5.98607693493441E-06"
+        iyz="-6.25954886336517E-09"
+        izz="2.86657161143928E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wristL1">
+    <inertial>
+      <origin
+        xyz="6.17711321451372E-06 1.83138374446057E-05 8.57229603389969E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00081177365211426" />
+      <inertia
+        ixx="5.2421482195423E-09"
+        ixy="-3.78052767444852E-15"
+        ixz="-1.76958009129349E-15"
+        iyy="5.24213828621759E-09"
+        iyz="-5.24643166538881E-15"
+        izz="1.24836091636524E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/wristL1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/wristL1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wristJ1"
+    type="revolute">
+    <origin
+      xyz="3.93530845455317E-05 0 0.012005007142428"
+      rpy="1.5707963267949 2.3474719749658E-16 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="wristL1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wristL2">
+    <inertial>
+      <origin
+        xyz="-0.000597055616715281 0.00699048879940276 0.000639336448123269"
+        rpy="0 0 0" />
+      <mass
+        value="0.00602256830446107" />
+      <inertia
+        ixx="2.83795243887084E-07"
+        ixy="-2.21534434310027E-08"
+        ixz="-2.29833867645794E-09"
+        iyy="6.86096590611393E-08"
+        iyz="2.30733078011033E-08"
+        izz="2.51704005721345E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/wristL2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Miniwrist_urdf/meshes/wristL2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wristJ2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="wristL1" />
+    <child
+      link="wristL2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
