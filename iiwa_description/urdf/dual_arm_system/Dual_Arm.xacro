@@ -62,10 +62,10 @@
   </link>
 
  
-  <!-- left arm -->
+  <!-- right arm -->
   <xacro:dual_arm_right robot_name="${robot_name}"/>
 
-  <!-- right arm -->
+  <!-- left arm -->
   <xacro:dual_arm_left robot_name="${robot_name}"/>
 
   <!-- end-effectors -->
