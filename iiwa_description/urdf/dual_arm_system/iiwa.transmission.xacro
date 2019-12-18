@@ -166,6 +166,28 @@
   <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
+
+  <transmission name="wristJ1_R_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wristJ1_R">
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="wristJ1_R_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+
+  <transmission name="wristJ2_R_tran">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="wristJ2_R">
+  <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+      </joint>
+      <actuator name="wristJ2_R_motor">
+  <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
 <!--
   <transmission name="gripper_base_joint_tran">
       <robotNamespace>/${robot_name}</robotNamespace>
