@@ -1,0 +1,43 @@
+<robot
+  name="Link3^Full Arm Assembly_w_wrist">
+  <link
+    name="L3">
+    <inertial>
+      <origin
+        xyz="-9.48525443954518E-05 -0.000463075774122468 0.0780155361342653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0971976409161237" />
+      <inertia
+        ixx="9.79772834604298E-05"
+        ixy="3.9991085262184E-09"
+        ixz="6.79112655284525E-08"
+        iyy="0.000101208102404303"
+        iyz="9.26940053899362E-07"
+        izz="3.28836084583875E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link3^Full Arm Assembly_w_wrist/meshes/L3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link3^Full Arm Assembly_w_wrist/meshes/L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

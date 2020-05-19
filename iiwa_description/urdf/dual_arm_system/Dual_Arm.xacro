@@ -16,8 +16,8 @@
   name="dual_arm_base_joint"
   type="fixed">
   <origin
-    xyz="0 0 0.045"
-    rpy="${PI} 0 0" />
+    xyz="0 0 0"
+    rpy="0 0 0" />
   <parent
     link="${robot_name}_link_7" />
   <child
@@ -31,35 +31,38 @@
     velocity="13" />
   <dynamics damping="${joint_damping}" friction = "${joint_friction}"/>
  </joint>
-  <link
+
+
+
+<link
     name="base_link">
     <inertial>
-      <origin xyz="-0.0746188127206768 -5.55111512312578E-17 -0.0854799809858157" rpy="0 0 0" />
-      <mass value="1.613834759363" />
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      <origin xyz="-0.0 0.00 0.16857" rpy="0 0 0" />
+      <mass value="2" />
+      <inertia ixx="0.143165" ixy="0.00019857" ixz="-0.059347" iyy="0.12476" iyz="0.00014442" izz="0.21596" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/base_link.STL" />
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link.STL" />
       </geometry>
       <material
         name="">
-        <color
-          rgba="1 1 1 1" />
+        <color rgba="1 1 1 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/Dual_Arm/base_link.STL" />
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link.STL" />
       </geometry>
     </collision>
   </link>
+
+
+
+
+
 
  
   <!-- right arm -->

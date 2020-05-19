@@ -1,0 +1,43 @@
+<robot
+  name="Center_hub_1^Assembly">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00441398623550876 -0.0353477296410467 0.168539079236398"
+        rpy="0 0 0" />
+      <mass
+        value="22.6480550210592" />
+      <inertia
+        ixx="0.124034099087847"
+        ixy="0.000197498922096084"
+        ixz="-0.000144591725563151"
+        iyy="0.0432827374753758"
+        iyz="0.0591195558730604"
+        izz="0.080752327678928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Center_hub_1^Assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Center_hub_1^Assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

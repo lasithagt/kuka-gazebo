@@ -15,7 +15,7 @@
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
     <arg name="trajectory" default="false"/>
-    <arg name="controller_params" default="iiwa_control" />
+    <arg name="controller_params" default="iiwa_sim" />
     <arg name="environment" default="test" />
     <arg name="urdf_load" default="iiwa14" />
     

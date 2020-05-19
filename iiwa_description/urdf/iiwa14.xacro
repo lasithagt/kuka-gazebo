@@ -5,7 +5,7 @@
   <xacro:property name="safety_controller_k_pos" value="100" />
   <xacro:property name="safety_controller_k_vel" value="2" /> 
   <xacro:property name="joint_damping" value="0.4" />
-  <xacro:property name="joint_friction" value="0.4"/>
+  <xacro:property name="joint_friction" value="1.4"/>
   <xacro:property name="max_effort" value="5000"/>
   <xacro:property name="max_velocity" value="100"/>
   <xacro:property name="joint_friction" value="0.005" />
@@ -246,7 +246,7 @@
       <inertial>
         <origin xyz="0 0.0006 0.0004" rpy="0 0 0"/>
         <mass value="1.8"/>
-        <inertia ixx="0.005"  ixy="0"  ixz="0" iyy="0.0036" iyz="0" izz="0.0047" />
+        <inertia ixx="0.005"  ixy="0"  ixz="0" iyy="0.0036" iyz="0" izz="0.1" />
       </inertial>
       
       <visual>

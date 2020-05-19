@@ -1,0 +1,43 @@
+<robot
+  name="Link1^Full Arm Assembly_w_wrist">
+  <link
+    name="L1">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -1.38777878078145E-16 0.0300379130332605"
+        rpy="0 0 0" />
+      <mass
+        value="0.354115970550142" />
+      <inertia
+        ixx="4.65925979029446E-05"
+        ixy="2.68006518474121E-22"
+        ixz="-3.15388932838673E-20"
+        iyy="4.65925979029446E-05"
+        iyz="-4.3765538483364E-19"
+        izz="7.07684520737569E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link1^Full Arm Assembly_w_wrist/meshes/L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link1^Full Arm Assembly_w_wrist/meshes/L1.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

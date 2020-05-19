@@ -36,7 +36,8 @@
 
     <!-- Run a python script to send a service call to gazebo_ros to spawn a URDF robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-          args="-urdf -model $(arg model) -param robot_description -J iiwa_joint_1 1.57 -J iiwa_joint_4 0.1 -J iiwa_joint_7 0" />
+          args="-urdf -model $(arg model) -param robot_description -J iiwa_joint_1 -1.5708 -J iiwa_joint_2 0.7854 -J iiwa_joint_3 0 -J iiwa_joint_4 0.7854 -J iiwa_joint_5 0 -J iiwa_joint_6 -0.0 -J iiwa_joint_7 -1.5708 -J J1_R 0 -J J2_R 0 -J J3_R 0.7854 -J J4_R -2.094 -J J1_L 0 -J J2_L 0 -J J3_L -0.7854 -J J4_L -1.0472" />
+
 
 </launch>
     

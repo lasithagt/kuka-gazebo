@@ -8,8 +8,8 @@
    <joint
     name="wrist_base_R"
     type="fixed">
-    <origin xyz="-0.12 0.0 0.01" rpy="0 ${-PIhalf} 0" />
-    <parent link="Link_R4" />
+    <origin xyz="0 -0.183 0.0" rpy="${PI/2} ${PI} 0" />
+    <parent link="L4_R" />
     <child link="wrist_base_R" />
     <axis xyz="0 0 1" />
   </joint>
@@ -25,7 +25,7 @@
       <origin
         xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link.STL" />
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link_gripper.STL" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link.STL" />
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link_gripper.STL" />
       </geometry>
     </collision>
   </link>

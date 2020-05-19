@@ -54,14 +54,18 @@
                  $(arg hardware_interface)_J5_controller
                  $(arg hardware_interface)_J6_controller
                  $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_J_L1_controller
-                 $(arg hardware_interface)_J_L2_controller
-                 $(arg hardware_interface)_J_L3_controller
-                 $(arg hardware_interface)_J_L4_controller
-                 $(arg hardware_interface)_J_R1_controller
-                 $(arg hardware_interface)_J_R2_controller
-                 $(arg hardware_interface)_J_R3_controller
-                 $(arg hardware_interface)_J_R4_controller
+                 $(arg hardware_interface)_J1_R_controller
+                 $(arg hardware_interface)_J2_R_controller
+                 $(arg hardware_interface)_J3_R_controller
+                 $(arg hardware_interface)_J4_R_controller
+                 $(arg hardware_interface)_J1_L_controller
+                 $(arg hardware_interface)_J2_L_controller
+                 $(arg hardware_interface)_J3_L_controller
+                 $(arg hardware_interface)_J4_L_controller
+                 $(arg hardware_interface)_wristJ1_R_controller
+                 $(arg hardware_interface)_wristJ2_R_controller
+                 $(arg hardware_interface)_wristJ1_L_controller
+                 $(arg hardware_interface)_wristJ2_L_controller
                  "
                  />
 

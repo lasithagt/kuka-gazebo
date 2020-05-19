@@ -42,14 +42,14 @@
       <material>Gazebo/Grey</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
     <!-- Link0 -->
     <gazebo reference="${robot_name}_link_0">
       <material>Gazebo/Grey</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link1 -->
@@ -57,7 +57,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link2 -->
@@ -65,7 +65,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link3 -->
@@ -73,7 +73,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
 
@@ -82,7 +82,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link5 -->
@@ -90,7 +90,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link6 -->
@@ -98,7 +98,7 @@
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Link7 -->
@@ -106,7 +106,7 @@
       <material>Gazebo/Grey</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <!-- Kuka Fitting -->
@@ -114,7 +114,7 @@
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <gazebo reference="base_link">
@@ -124,33 +124,33 @@
       <selfCollide>0</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link_L1">
+    <gazebo reference="L1_R">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link_L2">
+    <gazebo reference="L2_R">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
-    <gazebo reference="Link_L3">
+    <gazebo reference="L3_R">
       <material>Gazebo/White</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
 
-    <gazebo reference="Link_L4">
+    <gazebo reference="L4_R">
       <material>Gazebo/Red</material>
       <mu1>0.2</mu1>
       <mu2>0.2</mu2>
-      <selfCollide>0</selfCollide>
+      <selfCollide>1</selfCollide>
     </gazebo>
 
     <gazebo reference="Link_R1">
