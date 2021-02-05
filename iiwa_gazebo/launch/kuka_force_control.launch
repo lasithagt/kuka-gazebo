@@ -11,7 +11,7 @@
     <!-- |    controllers for the single joints, using the "trajectory" argument.            | -->
     <!-- ===================================================================================== -->
     
-    <arg name="hardware_interface" default="EffortJointInterface" />
+    <arg name="hardware_interface" default="PositionJointInterface" />
     <arg name="robot_name" default="iiwa" />
     <arg name="model" default="iiwa14"/>
     <arg name="trajectory" default="false"/>
@@ -57,10 +57,6 @@
                  $(arg hardware_interface)_J5_controller
                  $(arg hardware_interface)_J6_controller
                  $(arg hardware_interface)_J7_controller
-                 $(arg hardware_interface)_table_joint_controller
-                 $(arg hardware_interface)_table_joint_y_controller
-                 $(arg hardware_interface)_table_joint_x_controller
-                 $(arg hardware_interface)_table_joint_tilt_x_controller
                  "/>
             <arg name="robot_name" value="$(arg robot_name)" />
             <arg name="model" value="$(arg model)" />
@@ -72,6 +68,11 @@
     <!-- Loads the python script to move the table  -->
 <!--     <node name="table_pulsate" pkg="scripts_sim" type="move_table.py" respawn="true"
           output="screen" args="" /> -->
+
+<!--                  $(arg hardware_interface)_table_joint_controller
+                 $(arg hardware_interface)_table_joint_y_controller
+                 $(arg hardware_interface)_table_joint_x_controller
+                 $(arg hardware_interface)_table_joint_tilt_x_controller -->
 
     <!-- moves the joint states to a feasible position -->
 
