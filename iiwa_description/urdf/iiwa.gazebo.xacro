@@ -243,7 +243,6 @@
     </gazebo>
 
 
-
     <!--EOAT-->
 <!--
     <gazebo reference="rotating_base_link">
