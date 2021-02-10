@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="pulsating_surface_gazebo" params="robot_name">
+<!--   	<gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/${robot_name}</robotNamespace>
+      </plugin>
+    </gazebo> -->
+
+    <gazebo reference="post">
+      <material>Gazebo/White</material>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+
+    <gazebo reference="table_surface">
+      <material>Gazebo/WoodPallet</material>
+      <turnGravityOff>true</turnGravityOff>
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kd>20</kd>
+      <kp>0.1</kp>
+      <selfCollide>1</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

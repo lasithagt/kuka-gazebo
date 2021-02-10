@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:macro name="pulsating_surface_transmission" params = "hardware_interface robot_name">
+
+  <transmission name="pulsating_surface_tran_1">
+      <robotNamespace>/${robot_name}</robotNamespace>
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint">
+	 <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_1">
+	 <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission>
+
+<!--   <transmission name="pulsating_surface_tran_2">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint_tilt">
+   <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_2">
+   <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission> -->
+
+  <transmission name="pulsating_surface_tran_3">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint_x">
+   <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_3">
+   <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission>
+
+  <transmission name="pulsating_surface_tran_4">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint_y">
+   <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_4">
+   <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission>
+
+  <transmission name="pulsating_surface_tran_5">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint_tilt_x">
+   <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_5">
+   <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission>
+
+<!--   <transmission name="pulsating_surface_tran_6">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <type>transmission_interface/SimpleTransmission</type>
+  <joint name="table_joint_tilt_y">
+   <hardwareInterface>hardware_interface/${hardware_interface}</hardwareInterface>
+  </joint>
+  <actuator name="pulsating_surface_motor_6">
+   <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  </transmission> -->
+
+  </xacro:macro> 
+</robot>

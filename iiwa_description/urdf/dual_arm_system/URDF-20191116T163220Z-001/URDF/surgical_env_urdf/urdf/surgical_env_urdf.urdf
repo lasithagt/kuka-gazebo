@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="joint_friction" value="0.005" />
+  <xacro:property name="joint_damping" value="0.8" />
+  <xacro:property name="PIhalf" value="1.570796" />
+  <xacro:property name="PI" value="3.141592" />
+  <xacro:macro name="dual_arm_left" params="robot_name"> 
+
+  <link name="table">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 2.0817E-16 0.14288" rpy="0 0 0" />
+      <mass
+        value="3.7756" />
+      <inertia
+        ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://surgical_env_urdf/meshes/table.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://surgical_env_urdf/meshes/table.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="object">
+    <inertial>
+      <origin
+        xyz="0.00015416 -0.0028151 0.013886"
+        rpy="0 0 0" />
+      <mass
+        value="0.023989" />
+      <inertia
+        ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://surgical_env_urdf/meshes/object.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://surgical_env_urdf/meshes/object.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="object"
+    type="fixed">
+    <origin
+      xyz="0 0 0.1778" rpy="0 0 1.5707963267949" />
+    <parent
+      link="table" />
+    <child
+      link="object" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  </xacro:macro>
+</robot>

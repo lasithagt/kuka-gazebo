@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="joint_friction" value="0.0001" />
+  <xacro:property name="joint_damping" value="0.001" />
+  <xacro:property name="PIhalf" value="1.570796" />
+  <xacro:property name="PI" value="3.141592" />
+  <xacro:macro name="miniwrist_left" params="robot_name"> 
+   <joint
+    name="wrist_base_L"
+    type="fixed">
+    <origin xyz="0 -0.183 0.0" rpy="${PI/2} ${PI} 0" />
+    <parent link="L4_L" />
+    <child link="wrist_base_L" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <link name="wrist_base_L">
+    <inertial>
+      <origin xyz="-1.21122973523576E-05 -0.000258666055421581 -0.0504395667584774" rpy="0 0 0" />
+      <mass value="0.0253977949262739" />
+      <inertia
+        ixx="0.0349511160259362" ixy="-0.000803793468213869" ixz="0.00000178582674691137" iyy="0.0598607693493441E" iyz="-0.00000625954886336517" izz="0.0286657161143928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link_gripper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.501960784313725 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/base_link_gripper.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wristL1_L">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0081177365211426" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/wristL1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <!-- <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/ristL1.STL" /> -->
+        <sphere radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="wristJ1_L"
+    type="revolute">
+    <origin xyz="0 0 0.012005007142428" rpy="1.5707963267949 0 1.5707963267949" />
+    <parent link="wrist_base_L" />
+    <child link="wristL1_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.0" upper="1.0" effort="200" velocity="10" />
+    <dynamics damping="0.00" friction = "0.000"/>
+  </joint>
+
+  <link
+    name="wristL2_L">
+    <inertial>
+      <origin xyz="-0.000597055616715281 0.00699048879940276 0.000639336448123269" rpy="0 0 0" />
+      <mass value="0.00602256830446107" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/wristL2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <!-- <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/wristL2.STL" /> -->
+        <sphere radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wristJ2_L"
+    type="revolute">
+    <origin xyz="0 0 0" rpy="0 -1.5707963267949 0" />
+    <parent link="wristL1_L" />
+    <child link="wristL2_L" />
+    <limit lower="-1.0" upper="1.0" effort="200" velocity="10" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.00" friction = "0.0"/>
+  </joint>
+  </xacro:macro>
+</robot>

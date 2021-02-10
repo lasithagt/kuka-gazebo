@@ -1,0 +1,14 @@
+TODO: (KUKA force control)
+
+1. QP MPC - 2 days
+2. Feedback Linearize the system - Handle redundancies - 4 days
+3. Sliding mode control to keep on the reference path - 3 days
+4. Model development - 5 days
+4. Implementation on gazebo - 3 days
+5. Implementation on the real system - 5 days
+
+TODO: (Dual arm design optimization)
+
+Goal: A system design which takes into account collision free path and maximize the dexterity. 
+
+References:

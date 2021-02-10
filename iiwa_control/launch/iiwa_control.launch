@@ -6,15 +6,17 @@
     
     <arg name="hardware_interface" default="EffortJointInterface"/>
     <arg name="controllers" default="joint_state_controller pos_joint_trajectory_controller"/>
-    <arg name="robot_name" default="kuka" />
-    <arg name="model" default="iiwa14" />
+
+    <arg name="robot_name" default="iiwa" />
+    <arg name="model" default="iiwa" />
+    <arg name="controller_params" default="iiwa_control" />
     
     <!-- Loads joint controller configurations from YAML file to parameter server -->
-    <rosparam file="$(find iiwa_control)/config/$(arg robot_name)_control.yaml" command="load" />
+    <rosparam file="$(find iiwa_control)/config/$(arg controller_params).yaml" command="load" />
     
     <!-- Loads the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-          output="screen" args="$(arg controllers) --shutdown-timeout 2" />
+          output="screen" args="$(arg controllers)" />
     
     <!-- Converts joint states to TF transforms for rviz, etc -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
@@ -22,8 +24,9 @@
         <remap from="joint_states" to="/$(arg robot_name)/joint_states" />
     </node>
 
-    <!-- <include file="$(find iiwa_ros)/launch/command_iiwa.launch">
-    </include> -->
+
+    <!--<include file="$(find iiwa_ros)/launch/command_iiwa.launch">
+    </include>-->
 
     
 </launch>

@@ -1,0 +1,43 @@
+<robot
+  name="Link4^Full Arm Assembly_w_wrist">
+  <link
+    name="L4">
+    <inertial>
+      <origin
+        xyz="-8.56426041195846E-13 -0.0504972297796323 2.94087050250469E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0552051590373072" />
+      <inertia
+        ixx="5.49820861650814E-05"
+        ixy="-4.41696976221599E-16"
+        ixz="-1.38765172583936E-18"
+        iyy="2.5085873536659E-10"
+        iyz="-7.96928262758233E-08"
+        izz="5.4981835306346E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link4^Full Arm Assembly_w_wrist/meshes/L4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Link4^Full Arm Assembly_w_wrist/meshes/L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="joint_friction" value="0.00" />
+  <xacro:property name="joint_damping" value="2" />
+  <xacro:property name="PIhalf" value="1.570796" />
+  <xacro:property name="PI" value="3.141592" />
+  <xacro:macro name="dual_arm_right" params="robot_name">
+
+
+
+
+  <link name="L1_R">
+    <inertial>
+      <origin xyz="0 0 0.012168" rpy="0 0 0" />
+      <mass value="0.10323" />
+      <inertia ixx="0" ixy="0.1" ixz="0" iyy="0" iyz="0" izz="0.1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L1.STL" />
+      </geometry>
+    </collision>
+ </link>
+ <joint
+    name="J1_R" type="revolute">
+    <origin xyz="0.0807 -0.0892 0.2086" rpy="-${PIhalf} -0.733 -${PIhalf}" />
+    <parent link="base_link" />
+    <child link="L1_R" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-${PI}"
+      upper="${PI}"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "0"/>
+  </joint>
+
+  <link name="L2_R">
+    <inertial>
+      <origin xyz="0.0019663 -0.056961 -0.00024619" rpy="0 0 0" />
+      <mass value="0.10019" />
+      <inertia ixx="0.030334" ixy="0" ixz="0" iyy="0.01" iyz="0.0" izz="0.031932" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="J2_R" type="revolute">
+    <origin xyz="0 0 0.0893" rpy="${PIhalf} -${PIhalf} 0" />
+    <parent link="L1_R" />
+    <child link="L2_R" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-${PIhalf}"
+      upper="${PIhalf}"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "0"/>
+  </joint>
+
+  <link name="L3_R">
+    <inertial>
+      <origin xyz="0 0.0 0.054906237567049" rpy="0 0 0" />
+      <mass value="0.088571511506745" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="J3_R" type="revolute">
+    <origin xyz="0.000 -0.1706 0" rpy="0 ${PIhalf} -${PIhalf}" />
+    <parent link="L2_R" />
+    <child link="L3_R" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-${PI}"
+      upper="${PI}"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "0"/>
+  </joint>
+
+  <link name="L4_R">
+    <inertial>
+      <origin xyz="0 -0.056686585128774 -0.0" rpy="0 0 0" />
+      <mass value="0.0805726314171642" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.0179335303394939" iyz="0" izz="0.0181823116496743" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://iiwa_description/meshes/Dual_Arm_Manipulator/Arm/L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4_R"
+    type="revolute">
+    <origin xyz="0 -0.0291 0.1055" rpy="0 ${PIhalf} ${PIhalf}" />
+    <parent link="L3_R" />
+    <child link="L4_R" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-${PI}"
+      upper="${PI}"
+      effort="20000"
+      velocity="13" />
+    <dynamics damping="${joint_damping}" friction = "0"/>
+  </joint>
+
+
+
+
+
+  </xacro:macro>
+</robot>

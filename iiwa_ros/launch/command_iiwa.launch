@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-<node name="robotCommander" pkg="iiwa_ros" type = "closeGripper.py" output = "screen"/>
-
-</launch>

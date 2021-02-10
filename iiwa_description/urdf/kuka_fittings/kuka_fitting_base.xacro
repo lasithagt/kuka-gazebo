@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:macro name="kuka_fitting" params="robot_name">
+
+  <!-- joint between link_7 and kuka_fitting -->
+  <joint name="kuka_fitting_joint" type="fixed">
+    <parent link="${robot_name}_link_7"/>
+    <child link="kuka_fitting_link"/>
+    <origin xyz="0 0 0.03" rpy="0 3.14 0"/>
+  </joint>
+  <link
+    name="kuka_fitting_link">
+    <inertial>
+      <origin
+        xyz="0.000187496007215465 -0.000759867204165252 -0.0300061532785365"
+        rpy="0 0 0" />
+      <mass
+        value="0.314166497676185" />
+      <inertia
+        ixx="7.87802034777577E-05"
+        ixy="2.35579029734391E-08"
+        ixz="1.33145704138046E-07"
+        iyy="7.86340736904598E-05"
+        iyz="-8.12369192199764E-07"
+        izz="1.56872589305729E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/kuka_fitting_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa_description/meshes/iiwa14/collision/kuka_fitting_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="kuka_fitting_ee" type="revolute">
+    <parent link="kuka_fitting_link"/>
+    <child link="kuka_fitting_ee_"/>
+    <origin xyz="0 0 -0.13" rpy="0 -3.14 0"/>
+    <limit lower="0" upper="0"
+           effort="0" velocity="0" />
+  </joint>
+
+  <link name="kuka_fitting_ee_"> 
+    <visual><geometry><sphere radius=".00001"/></geometry></visual>
+    <collision><geometry><sphere radius=".00001"/></geometry></collision>
+
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia
+        ixx="0.0001" ixy="0.0" ixz="0.0"
+        iyy="0.0001" iyz="0.0"
+        izz="0.0001" />
+    </inertial>
+  </link>
+
+  </xacro:macro>
+
+</robot>

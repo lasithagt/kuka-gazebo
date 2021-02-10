@@ -1,0 +1,352 @@
+#iiwa:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 500  
+  
+  # Controllers for singular joint ------------------------------------
+  # 
+  # Effort Position Controllers ---------------------------------------
+
+  # VALUES ARE NOT CORRECT !
+  EffortJointInterface_J1_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_1
+    pid: {p: 800.0, i: 0, d: 80.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J2_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_2
+    pid: {p: 800.0, i: 0, d: 70.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J3_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_3
+    pid: {p: 600.0, i: 0, d: 5.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J4_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_4
+    pid: {p: 500.0, i: 0, d: 50.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J5_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_5
+    pid: {p: 50.0, i: 0, d: 10.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J6_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_6
+    pid: {p: 50.0, i: 0.0, d: 5.0, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  EffortJointInterface_J7_controller:
+    type: effort_controllers/JointPositionController
+    joint: iiwa_joint_7
+    pid: {p: 10.0, i: 0.0, d: 1, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_1:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_2:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_3:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_4:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_5:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_6:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+
+  gazebo_ros_control:
+    pid_gains:
+      iiwa_joint_7:
+        {p: 100.0, i: 10, d: 50, i_clamp_min: -10000, i_clamp_max: 10000}
+
+
+
+
+  # Forward Position Controllers ---------------------------------------
+  PositionJointInterface_J1_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_1
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+  PositionJointInterface_J2_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_2
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+    
+  PositionJointInterface_J3_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_3
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J4_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_4
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+    
+  PositionJointInterface_J5_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_5
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+    
+  PositionJointInterface_J6_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_6
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+    
+  PositionJointInterface_J7_controller:
+    type: position_controllers/JointPositionController
+    joint: iiwa_joint_7
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_dual_arm_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: dual_arm_base_joint
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_1_controller:
+    type: position_controllers/JointPositionController
+    joint: J_L1
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_2_controller:
+    type: position_controllers/JointPositionController
+    joint: J_L2 
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_3_controller:
+    type: position_controllers/JointPositionController
+    joint: J_L3
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_4_controller:
+    type: position_controllers/JointPositionController
+    joint: J_L4
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_21_controller:
+    type: position_controllers/JointPositionController
+    joint: J_R1
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_22_controller:
+    type: position_controllers/JointPositionController
+    joint: J_R2 
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_23_controller:
+    type: position_controllers/JointPositionController
+    joint: J_R3
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_J_24_controller:
+    type: position_controllers/JointPositionController
+    joint: J_R4
+    pid: {p: 1000.0, i: 20, d: 150, i_clamp_min: -10000, i_clamp_max: 10000}
+
+  PositionJointInterface_gripper_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: gripper_base_joint
+
+  PositionJointInterface_claw_1_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_1_joint
+
+  PositionJointInterface_claw_2_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: claw_2_joint
+
+  PositionJointInterface_2_gripper_base_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_gripper_base_joint
+
+  PositionJointInterface_2_claw_1_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_claw_1_joint
+
+  PositionJointInterface_2_claw_2_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: 2_claw_2_joint
+
+  PositionJointInterface_PS_controller:
+    type: position_controllers/JointPositionController
+    joint: prismatic_joint
+    
+  # Forward Velocity Controllers ---------------------------------------
+  VelocityJointInterface_J1_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_1
+    
+  VelocityJointInterface_J2_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_2
+    
+  VelocityJointInterface_J3_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_3
+    
+  VelocityJointInterface_J4_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_4
+    
+  VelocityJointInterface_J5_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_5
+    
+  VelocityJointInterface_J6_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_6
+    
+  VelocityJointInterface_J7_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: iiwa_joint_7
+
+  VelocityJointInterface_J8_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_1_joint
+
+  VelocityJointInterface_J9_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_2_joint
+
+  VelocityJointInterface_J10_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_3_joint
+
+  VelocityJointInterface_J11_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: claw_4_joint
+    
+    
+  # Trajectory Controllers ---------------------------------------
+  #   
+  # Effort Position Controllers ---------------------------------------
+  EffortJointInterface_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints: 
+      - iiwa_joint_1
+      - iiwa_joint_2
+      - iiwa_joint_3
+      - iiwa_joint_4
+      - iiwa_joint_5
+      - iiwa_joint_6
+      - iiwa_joint_7
+      - J_L1
+      - J_L2
+      - J_L3
+      - J_L4
+      - J_R1
+      - J_R2
+      - J_R3
+      - J_R4
+      - gripper_base_joint
+      - claw_1_joint
+      - claw_2_joint
+      - gripper_base_joint_2
+      - claw_1_joint_2
+      - claw_2_joint_2
+      - table_joint
+      
+      # VALUES ARE NOT CORRECT !
+    gains:
+      iiwa_joint_1: {p: 500,  d: 30, i: 15, i_clamp: 30}
+      iiwa_joint_2: {p: 200,  d: 10, i: 10, i_clamp: 30}
+      iiwa_joint_3: {p: 65,  d: 10, i: 15, i_clamp: 30}
+      iiwa_joint_4: {p: 31,  d: 7, i: 12, i_clamp: 30}
+      iiwa_joint_5: {p: 23,  d: 3, i: 5, i_clamp: 30}
+      iiwa_joint_6: {p: 13,  d: 3, i: 3, i_clamp: 30}
+      iiwa_joint_7: {p: 17,  d: 2, i: 2.5, i_clamp: 10}
+      J_L1: {p: 4,  d: 0, i: 0, i_clamp: 10}
+      J_L2: {p: 4,  d: 0, i: 0, i_clamp: 10}
+      J_L3: {p: 2,  d: 0, i: 0, i_clamp: 10}
+      J_L4: {p: 2,  d: 0, i: 0, i_clamp: 10}
+      J_R1: {p: 4,  d: 0, i: 0, i_clamp: 10}
+      J_R2: {p: 3,  d: 0, i: 0, i_clamp: 10}
+      J_R3: {p: 2,  d: 0, i: 0, i_clamp: 10}
+      J_R4: {p: 2,  d: 0, i: 0, i_clamp: 10}
+      gripper_base_joint: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      claw_1_joint: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      claw_2_joint: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      gripper_base_joint_2: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      claw_1_joint_2: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      claw_2_joint_2: {p: 1,  d: 0, i: 0, i_clamp: 10}
+      table_joint: {p: 10,  d: 2, i: 0, i_clamp: 10}
+    constraints:
+      goal_time: 1.0                   # Override default
+
+    state_publish_rate:  25            # Override default
+    action_monitor_rate: 30            # Override default
+    stop_trajectory_duration: 0        # Override default
+    
+  # Forward Position Controllers ---------------------------------------
+  PositionJointInterface_trajectory_controller:
+    type: position_controllers/JointTrajectoryController
+    joints: 
+      - iiwa_joint_1
+      - iiwa_joint_2
+      - iiwa_joint_3
+      - iiwa_joint_4
+      - iiwa_joint_5
+      - iiwa_joint_6
+      - iiwa_joint_7
+
+    constraints:
+      goal_time: 0.5                   # Override default
+
+    state_publish_rate:  25            # Override default
+    action_monitor_rate: 30            # Override default
+    stop_trajectory_duration: 0        # Override default
+    
+  # Forward Velocity Controllers ---------------------------------------
+  VelocityJointInterface_trajectory_controller:
+    type: velocity_controllers/JointTrajectoryController
+    joints: 
+      - iiwa_joint_1
+      - iiwa_joint_2
+      - iiwa_joint_3
+      - iiwa_joint_4
+      - iiwa_joint_5
+      - iiwa_joint_6
+      - iiwa_joint_7
+      
+      # VALUES ARE NOT CORRECT !
+    gains:
+      iiwa_joint_1: {p: 500,  d: 30, i: 15, i_clamp: 30}
+      iiwa_joint_2: {p: 200,  d: 10, i: 10, i_clamp: 30}
+      iiwa_joint_3: {p: 65,  d: 10, i: 15, i_clamp: 30}
+      iiwa_joint_4: {p: 31,  d: 7, i: 12, i_clamp: 30}
+      iiwa_joint_5: {p: 23,  d: 3, i: 5, i_clamp: 30}
+      iiwa_joint_6: {p: 13,  d: 3, i: 3, i_clamp: 30}
+      iiwa_joint_7: {p: 17,  d: 2, i: 2.5, i_clamp: 10}
+
+    constraints:
+      goal_time: 0.5                   # Override default
+
+    state_publish_rate:  25            # Override default
+    action_monitor_rate: 30            # Override default
+    stop_trajectory_duration: 0        # Override default
+
+
+
+

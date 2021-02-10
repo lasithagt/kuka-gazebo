@@ -22,7 +22,7 @@ def readFile(filename):
         # return pickle.load(f)
 
 if __name__ == '__main__':
-    rospy.init_node('commandrobot')
+    rospy.init_node('robot_position_command')
     rate = rospy.Rate(60.0)
 
     iiwa = pybindings.iiwaRosGazebo()

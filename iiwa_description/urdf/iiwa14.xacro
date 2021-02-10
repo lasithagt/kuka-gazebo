@@ -1,23 +1,17 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.gazebo.xacro" />
-  <!-- Import Transmissions -->
-  <xacro:include filename="$(find iiwa_description)/urdf/iiwa.transmission.xacro" />
-  <!-- Include Utilities -->
-  <xacro:include filename="$(find iiwa_description)/urdf/utilities.xacro" />
-  <!-- Include EOAT -->
-  <xacro:include filename="$(find iiwa_description)/urdf/juans_eoat.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/gripper_eoat.xacro" />
-  <xacro:include filename="$(find iiwa_description)/urdf/pulsating_surface.urdf.xacro" />
   <!-- some constants -->
   <xacro:property name="safety_controller_k_pos" value="100" />
   <xacro:property name="safety_controller_k_vel" value="2" /> 
-  <xacro:property name="joint_damping" value="0.1" />
-  <xacro:property name="joint_friction" value="0.1"/>
-  <xacro:property name="max_effort" value="300"/>
+  <!-- <xacro:property name="joint_damping" value="0.4" /> -->
+  <!-- <xacro:property name="joint_friction" value="1.4"/> -->
+  <xacro:property name="max_effort" value="5000"/>
   <xacro:property name="max_velocity" value="10"/>
+  <xacro:property name="joint_friction" value="0.05" />
+  <xacro:property name="joint_damping" value="10.8" />
+  <xacro:property name="PIhalf" value="1.570796" />
+  <xacro:property name="PI" value="3.141592" />
   
   <xacro:macro name="iiwa14" params="parent hardware_interface robot_name *origin">
     
@@ -70,10 +64,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-168 * PI / 180}"
-                         soft_upper_limit="${168 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -109,10 +99,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-120 * PI / 180}" upper="${120 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-118 * PI / 180}"
-                         soft_upper_limit="${118 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -148,10 +134,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-168 * PI / 180}"
-                         soft_upper_limit="${168 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -187,10 +169,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-120 * PI / 180}" upper="${120 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-118 * PI / 180}"
-                         soft_upper_limit="${118 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -226,10 +204,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-170 * PI / 180}" upper="${170 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-168 * PI / 180}"
-                         soft_upper_limit="${168 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -265,10 +239,6 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-120 * PI / 180}" upper="${120 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-118 * PI / 180}"
-                         soft_upper_limit="${118 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
     </joint>
     
@@ -276,7 +246,7 @@
       <inertial>
         <origin xyz="0 0.0006 0.0004" rpy="0 0 0"/>
         <mass value="1.8"/>
-        <inertia ixx="0.005"  ixy="0"  ixz="0" iyy="0.0036" iyz="0" izz="0.0047" />
+        <inertia ixx="0.005"  ixy="0"  ixz="0" iyy="0.0036" iyz="0" izz="0.1" />
       </inertial>
       
       <visual>
@@ -304,18 +274,17 @@
       <axis xyz="0 0 1"/>
       <limit lower="${-175 * PI / 180}" upper="${175 * PI / 180}"
              effort="${max_effort}" velocity="${max_velocity}" />
-      <safety_controller soft_lower_limit="${-173 * PI / 180}"
-                         soft_upper_limit="${173 * PI / 180}"
-                         k_position="${safety_controller_k_pos}"
-                         k_velocity="${safety_controller_k_vel}"/> 
       <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
+      <sensor name="force_torque" type="force_torque">
+          <update_rate>100</update_rate>
+      </sensor>
     </joint>
     
     <link name="${robot_name}_link_7">
       <inertial>
-        <origin xyz="0 0 0.02" rpy="0 0 0"/>
+        <origin xyz="0 0 -0.1" rpy="0 0 0"/>
         <mass value="0.3"/>
-        <inertia ixx="0.001"  ixy="0"  ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        <inertia ixx="0.1"  ixy="0"  ixz="0" iyy="0.1" iyz="0" izz="0.1" />
       </inertial>
       
       <visual>
@@ -335,66 +304,8 @@
       </collision>
     </link>
 
-    <!-- Commented force sensor EOAT
-    <joint name="${robot_name}_joint_ee" type="fixed">
-      <parent link="${robot_name}_link_7"/>
-      <child link="${robot_name}_link_ee"/>
-      <origin xyz="0 0 0.0525" rpy="1.57 0 0"/>
-    </joint>
-    
-    <link name="${robot_name}_link_ee">
-    </link>
-  <link
-    name="${robot_name}_link_ee">
-    <inertial>
-      <origin
-        xyz="9.5698E-05 0.0082673 2.27179999999949E-06"
-        rpy="0 0 0" />
-      <mass
-        value="0.042407" />
-      <inertia
-        ixx="2.09361562697698E-05"
-        ixy="-1.03008820969214E-10"
-        ixz="7.85583672233988E-16"
-        iyy="1.20677052581546E-05"
-        iyz="1.27817724850131E-09"
-        izz="2.2947402405232E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="1.5707963267949 0 0" />
-      <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/flange.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="1.5707963267949 0 0" />
-      <geometry>
-        <mesh
-          filename="package://iiwa_description/meshes/iiwa14/collision/flange.STL" />
-      </geometry>
-    </collision>
-  </link>
--->
-    
-    <!--Extensions -->
-    <!--<xacro:juans_eoat robot_name="${robot_name}"/>--> <!--Comented out EOAT-->
-    <xacro:gripper_eoat robot_name="${robot_name}"/>
-    <xacro:pulsating_surface />
-    <xacro:iiwa_gazebo robot_name="${robot_name}"/>
-    <xacro:iiwa_transmission hardware_interface="${hardware_interface}"/>
+  
 
-    
-    
   </xacro:macro>
   
 </robot>

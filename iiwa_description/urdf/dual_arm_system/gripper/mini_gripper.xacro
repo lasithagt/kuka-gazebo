@@ -1,0 +1,158 @@
+
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="joint_friction" value="0.00" />
+  <xacro:property name="joint_damping" value="2" />
+  <xacro:property name="PIhalf" value="1.570796" />
+  <xacro:property name="PI" value="3.141592" />
+  <xacro:macro name="mini_gripper" params="robot_name">
+
+  <link name="base_gripper">
+    <inertial>
+      <origin xyz="8.67361737988404E-19 0 -0.0119095155726268" rpy="0 0 0" />
+      <mass value="0.00485495540582814" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/base_gripper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/base_gripper.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="GL1_R">
+    <inertial>
+      <origin xyz="-0.00180296397977581 0.00999874596575142 0.00127" rpy="0 0 0" />
+      <mass value="0.00099864652663301" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL1_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL1_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="GJ1_R" type="revolute">
+    <origin xyz="0.0101599999999999 0.00127 -0.0152400000000001" rpy="-1.5707963267949 0 0" />
+    <parent link="base_gripper" />
+    <child link="GL1_R" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="GL2_R">
+    <inertial>
+      <origin xyz="0.00407985603012743 -0.000329877961375326 -0.00127" rpy="0 0 0" />
+      <mass value="0.000466264271037588" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL2_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL2_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="GJ2_R" type="revolute">
+    <origin xyz="-0.00360592795955155 0.0199974919315028 0" rpy="0 0 2.34013620264089" />
+    <parent link="GL1_R" />
+    <child link="GL2_R" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="GL1_L">
+    <inertial>
+      <origin xyz="0.00173360785924065 0.0100110041349697 0.00127" rpy="0 0 0" />
+      <mass value="0.000998646526633011" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL1_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mini_gripper_urdf/meshes/GL1_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="GJ1_L" type="revolute">
+    <origin xyz="-0.01016 0.00127 -0.01524" rpy="-1.5707963267949 0 0" />
+    <parent link="base_gripper" />
+    <child link="GL1_L" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="GL2_L">
+    <inertial>
+      <origin xyz="0.00407985603012743 0.000329877961375347 -0.00127" rpy="0 0 0" />
+      <mass value="0.000466264271037588" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL2_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mini_gripper_urdf/meshes/GL2_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="GJ2_L" type="revolute">
+    <origin xyz="0.00346721571848102 0.0200220082699393 0" rpy="0 0 0.8014564509489" />
+    <parent link="GL1_L" />
+    <child link="GL2_L" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  </xacro:macro>
+</robot>
